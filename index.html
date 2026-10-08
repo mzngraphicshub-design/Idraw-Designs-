@@ -7,57 +7,50 @@
 <meta name="theme-color" content="#07150d">
 <title>iDraw Designs | Creative Studio</title>
 <meta name="description" content="iDraw Designs — Graphic Design, Branding, UI/UX and Creative Digital Experiences.">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#07150d;--panel:#0e2115;--lime:#b3ed36;
-  --white:#f4f7ef;--muted:#a5b2a7;--line:#26382b;
-}
+:root{--bg:#07150d;--panel:#0e2115;--lime:#b3ed36;--white:#f4f7ef;--muted:#a5b2a7;--line:#26382b}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:85px}
 body{background:var(--bg);color:var(--white);font-family:Inter,sans-serif;overflow-x:hidden}
 button,input,textarea,select{font:inherit}
-button,a{-webkit-tap-highlight-color:transparent}
-button{cursor:pointer}
+button,a{cursor:pointer}
 a{color:inherit;text-decoration:none}
-img{max-width:100%}
-[hidden]{display:none!important}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
 .container{width:min(1180px,90%);margin:auto}
 .muted,.small{color:var(--muted)}
-.small{font-size:11px;line-height:1.7}
+.small{font-size:12px;line-height:1.7}
 .eyebrow{font-size:11px;letter-spacing:2px;color:var(--lime);text-transform:uppercase}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border:1px solid var(--line);border-radius:30px;background:transparent;color:white;font-size:12px;font-weight:700;transition:.25s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 17px;border:1px solid var(--line);border-radius:30px;background:transparent;color:var(--white);font-size:12px;font-weight:700;transition:.25s}
 .btn:hover{transform:translateY(-2px);border-color:var(--lime)}
 .btn-primary{background:var(--lime);color:#10200b;border-color:var(--lime)}
 .btn-primary:hover{background:#d0ff75;color:#10200b}
-.btn-small{padding:9px 13px}
-.field{width:100%;padding:13px 14px;margin-top:7px;border:1px solid var(--line);border-radius:10px;background:#08180e;color:white;outline:none}
-.field:focus{border-color:var(--lime);box-shadow:0 0 0 3px #b3ed3615}
+.btn-small{padding:8px 12px;font-size:11px}
+.field{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:#08180e;color:white;margin-top:7px}
 .field::placeholder{color:#75847a}
-label{display:block;font-size:12px;color:#c4cec6;margin-bottom:15px}
-textarea.field{min-height:100px;resize:vertical}
-.topbar{position:sticky;top:0;z-index:50;background:#07150dee;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+label{display:block;font-size:12px;color:#c4cec6;margin-bottom:14px}
+textarea.field{resize:vertical;min-height:110px}
+.topbar{position:sticky;top:0;z-index:50;background:#07150df2;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:14px}
 .brand{display:flex;align-items:center;gap:10px;font:700 20px "Space Grotesk";white-space:nowrap}
-.brand>span>span{color:var(--lime)}
-.brand-logo{width:39px;height:39px;border-radius:11px;background:var(--lime);color:#07150d;display:grid;place-items:center;font-weight:800}
-.nav-links{display:flex;gap:23px;font-size:12px;color:#d1d9d1}
+.brand-name span{color:var(--lime)}
+.brand-logo{width:42px;height:42px;flex-shrink:0;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#d7ff75,#8ecb20);color:#10200b;font:800 20px "Space Grotesk";box-shadow:0 0 22px #b3ed3633;border:1px solid #d7ff75}
+.nav-links{display:flex;align-items:center;gap:23px;font-size:12px;color:#d1d9d1}
 .nav-links a:hover{color:var(--lime)}
-.nav-actions{display:flex;align-items:center;gap:7px}
-.lang-btn,.menu-btn{padding:10px 12px;border:1px solid var(--line);border-radius:25px;color:white;background:transparent;font-size:12px}
+.nav-actions{display:flex;gap:7px;align-items:center}
+.lang-btn,.menu-btn{padding:10px 12px;border:1px solid var(--line);border-radius:24px;color:white;background:transparent;font-size:12px}
 .menu-btn{display:none}
-.hero{min-height:650px;padding:90px 0;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero{min-height:660px;padding:90px 0;position:relative;display:flex;align-items:center;overflow:hidden}
+.hero:before{content:"";position:absolute;width:600px;height:600px;right:-150px;top:20px;background:radial-gradient(circle,#b3ed3626,transparent 67%);pointer-events:none}
 .grid-bg{position:absolute;inset:0;background-image:linear-gradient(#26382b55 1px,transparent 1px),linear-gradient(90deg,#26382b55 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(#000,transparent 90%);pointer-events:none}
-.hero:before{content:"";position:absolute;width:550px;height:550px;right:-150px;top:0;background:radial-gradient(circle,#b3ed3625,transparent 70%)}
-.hero-inner{position:relative;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px}
-.hero h1{font:700 clamp(55px,7.5vw,100px)/.94 "Space Grotesk";letter-spacing:-5px;margin:23px 0}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:35px}
+.hero h1{font:700 clamp(54px,7.5vw,100px)/.95 "Space Grotesk";letter-spacing:-5px;margin:23px 0}
 .hero h1 em{font-style:normal;color:var(--lime)}
-.hero-copy{max-width:530px;color:var(--muted);line-height:1.9;font-size:14px}
-.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
-.hero-art{aspect-ratio:1;max-width:460px;width:100%;justify-self:end;position:relative;display:grid;place-items:center}
+.hero-copy{max-width:540px;color:var(--muted);line-height:1.85;font-size:14px}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-art{aspect-ratio:1;max-width:450px;width:100%;justify-self:end;position:relative;display:grid;place-items:center}
 .ring{position:absolute;inset:5%;border:1px solid #b3ed3655;border-radius:50%;animation:spin 25s linear infinite}
 .ring.r2{inset:19%;border-style:dashed;animation-direction:reverse;animation-duration:18s}
 .ring.r3{inset:32%;border-color:#ffffff25}
@@ -71,177 +64,161 @@ textarea.field{min-height:100px;resize:vertical}
 .ticker div{width:max-content;animation:marquee 28s linear infinite}
 .section{padding:95px 0}
 .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:35px}
-.section-head h2{font:700 clamp(35px,5vw,63px)/1 "Space Grotesk";letter-spacing:-3px;margin-top:12px}
-.section-head p{max-width:390px;color:var(--muted);font-size:12px;line-height:1.8}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
-.filter{padding:10px 15px;border:1px solid var(--line);border-radius:30px;background:transparent;color:#cbd5cc;font-size:11px}
+.section-head h2{font:700 clamp(36px,5vw,64px)/1 "Space Grotesk";letter-spacing:-3px;margin-top:12px}
+.section-head p{max-width:390px;color:var(--muted);font-size:13px;line-height:1.8}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.filter{border:1px solid var(--line);border-radius:30px;background:transparent;color:#cbd5cc;padding:10px 15px;font-size:12px}
 .filter.active,.filter:hover{background:var(--lime);color:#10200b;border-color:var(--lime)}
 .projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px}
 .project{min-width:0;cursor:pointer;transition:transform .3s}
 .project:hover{transform:translateY(-5px)}
-.project-image{position:relative;aspect-ratio:1.25;overflow:hidden;display:grid;place-items:center;background:#17291c}
+.project-image{position:relative;aspect-ratio:1.25;overflow:hidden;display:grid;place-items:center;background:#17291c;border-radius:3px}
 .project-image img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .project:hover .project-image img{transform:scale(1.04)}
-.art-label{width:100%;height:100%;min-height:220px;display:grid;place-items:center;font:800 clamp(38px,7vw,85px)/.9 "Space Grotesk";letter-spacing:-4px;text-align:center}
+.art-label{width:100%;height:100%;min-height:190px;display:grid;place-items:center;font:800 clamp(38px,7vw,90px)/.9 "Space Grotesk";letter-spacing:-4px;text-align:center}
+.art-label span{color:var(--lime)}
 .art-green{background:#91d915;color:#07150d}
-.art-blue{background:#205ff0;color:white}
+.art-green span{color:#07150d}
+.art-blue{background:#205ff0}
 .art-orange{background:#ff713d;color:#1b130d}
-.art-purple{background:#6b4ce6;color:white}
-.project-meta{display:flex;justify-content:space-between;gap:12px;padding:15px 2px}
+.art-orange span{color:#1b130d}
+.art-purple{background:#6b4ce6}
+.project-meta{display:flex;justify-content:space-between;align-items:start;gap:12px;padding:15px 2px}
 .project-meta h3{font:600 19px "Space Grotesk"}
 .project-meta p{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.7}
 .text-btn{border:0;background:transparent;color:var(--lime);font-size:12px}
 .services-section{background:#0b1d11;border-block:1px solid var(--line)}
 .service-list{border-top:1px solid var(--line)}
-.service-row{display:grid;grid-template-columns:45px 1fr 1fr 25px;gap:20px;align-items:center;padding:25px 5px;border-bottom:1px solid var(--line)}
+.service-row{display:grid;grid-template-columns:55px 1fr 1fr 25px;gap:20px;align-items:center;padding:26px 5px;border-bottom:1px solid var(--line)}
 .service-row .number{color:var(--lime);font-size:11px}
-.service-row h3{font:600 24px "Space Grotesk"}
-.service-row p{color:var(--muted);font-size:12px;line-height:1.8}
+.service-row h3{font:600 25px "Space Grotesk"}
+.service-row p{color:var(--muted);font-size:12px;line-height:1.7}
 .service-row b{color:var(--lime)}
 .statement{padding:105px 0;background:var(--lime);color:#0b1b0e}
+.statement h2{max-width:950px;font:700 clamp(43px,7vw,84px)/.98 "Space Grotesk";letter-spacing:-4px;margin-top:22px}
 .statement .eyebrow{color:#304c0a}
-.statement h2{max-width:950px;font:700 clamp(42px,7vw,82px)/.98 "Space Grotesk";letter-spacing:-4px;margin-top:22px}
 .process-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:35px;border-top:1px solid var(--line)}
-.process-card{padding:25px 15px 20px 0;border-right:1px solid var(--line)}
+.process-card{padding:25px 18px 20px 0;border-right:1px solid var(--line)}
 .process-card:not(:first-child){padding-left:18px}
 .process-card:last-child{border-right:0}
 .process-card span{color:var(--lime);font-size:11px}
 .process-card h3{font:600 23px "Space Grotesk";margin:28px 0 10px}
-.process-card p{font-size:12px;color:var(--muted);line-height:1.8}
-.contact-panel{padding:80px 0 95px;background:#0b2114}
+.process-card p{font-size:12px;color:var(--muted);line-height:1.7}
+.contact-panel{padding:75px 0 95px;background:#0b2114}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
-.contact-grid h2{font:700 clamp(44px,6vw,74px)/.95 "Space Grotesk";letter-spacing:-4px;margin:20px 0}
-.contact-grid>div>p{color:var(--muted);font-size:13px;line-height:1.8}
-.form-card,.panel-card{background:#0e2115;border:1px solid var(--line);border-radius:18px;padding:25px}
-.form-status{font-size:12px;color:var(--lime);margin-top:12px;line-height:1.7}
+.contact-grid h2{font:700 clamp(45px,6vw,75px)/.95 "Space Grotesk";letter-spacing:-4px;margin:20px 0}
+.contact-grid>div>p{color:var(--muted);font-size:13px;line-height:1.8;max-width:420px}
+.form-card{background:#0e2115;border:1px solid var(--line);border-radius:18px;padding:25px}
+.form-status{font-size:12px;color:var(--lime);margin-top:12px;line-height:1.6}
 footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:11px}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 .socials{display:flex;gap:12px}
 .socials a:hover{color:var(--lime)}
-.modal{position:fixed;inset:0;z-index:1000;background:#000c;backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:18px;overflow:auto}
+.modal{position:fixed;inset:0;z-index:1000;background:#000c;display:none;align-items:center;justify-content:center;padding:12px;overflow:auto;backdrop-filter:blur(7px)}
 .modal.open{display:flex}
-.modal-box{width:min(680px,100%);max-height:92vh;overflow:auto;background:#0b1d11;border:1px solid var(--line);border-radius:18px;padding:25px;position:relative}
-.modal-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:22px}
-.modal-head h2{font:600 24px "Space Grotesk"}
+.modal-box{width:min(680px,100%);max-height:94dvh;overflow:auto;background:#0b1d11;border:1px solid var(--line);border-radius:18px;padding:24px;position:relative;box-shadow:0 20px 100px #0008}
+.modal-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:20px}
+.modal-head h2{font:600 25px "Space Grotesk"}
 .close-btn{border:1px solid var(--line);background:transparent;color:white;border-radius:8px;padding:7px 11px}
-.close-btn:hover{color:var(--lime);border-color:var(--lime)}
-.notice{background:#17291c;border:1px solid var(--line);padding:12px;border-radius:10px;color:var(--muted);font-size:12px;line-height:1.7;margin-bottom:18px}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
 .full{grid-column:1/-1}
-.divider{height:1px;background:var(--line);margin:22px 0}
-.admin-layout{display:grid;grid-template-columns:150px 1fr;gap:18px}
-.admin-sidebar{display:flex;flex-direction:column;gap:8px}
+.divider{height:1px;background:var(--line);margin:20px 0}
+.notice{background:#17291c;border:1px solid var(--line);padding:12px;border-radius:10px;color:var(--muted);font-size:12px;line-height:1.7;margin-bottom:18px}
+.admin-layout{display:grid;grid-template-columns:145px minmax(0,1fr);gap:16px}
+.admin-sidebar{display:flex;flex-direction:column;gap:7px}
 .admin-tab{padding:12px;text-align:left;background:transparent;border:1px solid transparent;border-radius:9px;color:var(--muted);font-size:12px}
 .admin-tab.active,.admin-tab:hover{background:#1b3020;color:var(--lime);border-color:var(--line)}
-.admin-content{min-width:0}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}
-.stat{padding:14px;background:#12271a;border:1px solid var(--line);border-radius:12px}
-.stat strong{display:block;font:700 26px "Space Grotesk";color:var(--lime)}
-.stat span{font-size:10px;color:var(--muted)}
+.admin-content{min-width:0;overflow-wrap:anywhere}
+.admin-content h3{font:600 19px "Space Grotesk";margin-bottom:7px}
+.admin-content .field{margin-bottom:2px}
+.admin-content .small{margin-bottom:12px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:15px 0}
+.stat{padding:13px;background:#12271a;border:1px solid var(--line);border-radius:12px;min-width:0}
+.stat strong{display:block;font:700 27px "Space Grotesk";color:var(--lime)}
+.stat span{font-size:10px;color:var(--muted);line-height:1.5;display:block}
 .table-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:11px}
-th,td{text-align:left;padding:11px 7px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
-th{color:var(--lime)}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th,td{text-align:left;padding:12px 8px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+th{color:var(--lime);font-weight:600}
 .empty{padding:25px;text-align:center;color:var(--muted);font-size:12px}
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:1200;background:var(--lime);color:#10200b;padding:12px 18px;border-radius:30px;font-size:12px;font-weight:700;display:none;max-width:90%;text-align:center}
 .toast.show{display:block}
-
-/* PREMIUM ANIMATED ADMIN LOGIN */
-#adminModal{background:#000d;backdrop-filter:blur(16px)}
-#adminModal .modal-box:has(#adminLogin){
-  width:min(450px,100%);max-height:92vh;padding:0;overflow:hidden;
-  position:relative;isolation:isolate;background:#07150d;
-  border:1px solid #b3ed3650;border-radius:25px;
-  box-shadow:0 0 60px #80ff2020,0 25px 100px #0009;
-  animation:cardIn .6s cubic-bezier(.2,.8,.2,1) both
-}
-#adminModal .modal-box:has(#adminLogin)::before{
-  content:"";position:absolute;inset:-100%;z-index:-2;
-  background:conic-gradient(transparent 0deg,transparent 230deg,#b3ed36 280deg,#00ffc3 310deg,transparent 360deg);
-  animation:borderSpin 7s linear infinite
-}
-#adminModal .modal-box:has(#adminLogin)::after{
-  content:"";position:absolute;inset:1px;z-index:-1;border-radius:24px;
-  background:radial-gradient(ellipse at 50% 0%,#b3ed3620,transparent 55%),#07150d
-}
-#adminModal .modal-head{padding:22px 24px 0;margin-bottom:0}
-#adminModal .modal-head h2{font-size:13px;letter-spacing:1px;color:#c9d8ca}
-#adminModal #adminLogin{padding:25px 27px 28px;position:relative}
-.admin-orb{width:72px;height:72px;margin:0 auto 19px;display:grid;place-items:center;position:relative;border:1px solid #b3ed3680;border-radius:23px;color:#07150d;background:var(--lime);font:800 28px "Space Grotesk";box-shadow:0 0 35px #b3ed3630;animation:floatOrb 3s ease-in-out infinite}
-.admin-orb:before,.admin-orb:after{content:"";position:absolute;inset:-9px;border:1px solid #b3ed3650;border-radius:29px;animation:pulseOrb 2.5s ease-out infinite}
-.admin-orb:after{animation-delay:1.25s}
-.admin-login-heading{text-align:center;font:700 30px/1.2 "Space Grotesk";letter-spacing:-1px;margin-bottom:9px}
-.admin-login-heading span{color:var(--lime)}
-.admin-login-subtitle{text-align:center;color:var(--muted);font-size:11px;line-height:1.8;margin-bottom:27px}
-.admin-login-label{display:block;color:#dce7dc;font-size:11px;margin-bottom:18px}
-.admin-input-wrap{position:relative;margin-top:9px}
-.admin-input-wrap .field{margin:0;min-height:49px;padding:14px 48px 14px 43px;border-radius:12px;background:#0b1d11;border-color:#263d2b;transition:.3s}
-.admin-input-wrap .field:focus{border-color:var(--lime);background:#0c2012;box-shadow:0 0 0 3px #b3ed3615,0 0 22px #b3ed3610}
-.admin-input-icon{position:absolute;top:50%;left:15px;transform:translateY(-50%);color:var(--lime);font-size:16px;pointer-events:none}
-.admin-password-toggle{position:absolute;top:50%;right:10px;transform:translateY(-50%);padding:6px;border:0;color:#a5b2a7;background:transparent;font-size:10px;font-weight:700}
-.admin-password-toggle:hover{color:var(--lime)}
-.admin-submit{width:100%;min-height:49px;margin-top:4px;border-radius:12px;border:1px solid var(--lime);background:var(--lime);color:#07150d;font-weight:800;font-size:11px;letter-spacing:.6px;box-shadow:0 7px 28px #b3ed3620;transition:.25s}
-.admin-submit:hover{transform:translateY(-2px);box-shadow:0 10px 35px #b3ed3640}
-.admin-submit:disabled{opacity:.7;cursor:wait}
-.admin-login-footer{margin-top:22px;padding-top:16px;border-top:1px solid #26382b;text-align:center;color:#829487;font-size:9px;letter-spacing:.5px}
-.admin-login-footer span{color:var(--lime)}
-#adminLoginStatus{text-align:center;overflow-wrap:anywhere;min-height:16px}
+#adminLogin{animation:fadeUp .45s ease both}
+#adminLogin .notice{background:linear-gradient(135deg,#17291c,#0e2115)}
+#adminLoginForm{padding:4px 0}
+#adminLoginForm .field{transition:border-color .2s,box-shadow .2s}
+#adminLoginForm .field:focus{border-color:var(--lime);box-shadow:0 0 0 3px #b3ed361b;outline:0}
+#adminLoginForm .btn{width:100%;margin-top:4px}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes bob{50%{transform:translateY(-10px) rotate(4deg)}}
 @keyframes marquee{to{transform:translateX(-50%)}}
-@keyframes cardIn{from{opacity:0;transform:translateY(25px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
-@keyframes borderSpin{to{transform:rotate(360deg)}}
-@keyframes floatOrb{50%{transform:translateY(-6px) rotate(3deg)}}
-@keyframes pulseOrb{0%{transform:scale(.9);opacity:.8}100%{transform:scale(1.25);opacity:0}}
-
+@keyframes fadeUp{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:850px){
-  .nav-links{display:none;position:absolute;top:74px;left:0;right:0;padding:20px 5%;background:#07150d;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:20px}
-  .nav-links.open{display:flex}
-  .menu-btn{display:block}
-  .hero{padding:65px 0 50px}
-  .hero-inner{grid-template-columns:1fr}
-  .hero-art{width:min(380px,95%);justify-self:center;grid-row:1}
-  .hero-content{grid-row:2}
-  .hero h1{font-size:clamp(55px,12vw,88px)}
-  .service-row{grid-template-columns:35px 1fr 25px}
-  .service-row p{grid-column:2}
-  .service-row b{grid-column:3;grid-row:1}
-  .process-grid{grid-template-columns:1fr 1fr}
-  .process-card:nth-child(2){border-right:0}
-  .process-card{border-bottom:1px solid var(--line)}
-  .contact-grid{grid-template-columns:1fr}
-  .admin-layout{grid-template-columns:1fr}
-  .admin-sidebar{flex-direction:row;flex-wrap:wrap}
-  .admin-tab{flex:1}
+.nav-links{display:none;position:absolute;top:76px;left:0;right:0;padding:18px 6%;background:#07150d;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:20px}
+.nav-links.open{display:flex}
+.menu-btn{display:block}
+.hero-inner{grid-template-columns:1fr}
+.hero{padding:75px 0 55px}
+.hero-art{width:min(390px,90%);justify-self:center;grid-row:1}
+.hero-content{grid-row:2}
+.hero h1{font-size:clamp(55px,12vw,88px)}
+.service-row{grid-template-columns:35px 1fr 25px}
+.service-row p{grid-column:2}
+.service-row b{grid-column:3;grid-row:1}
+.process-grid{grid-template-columns:1fr 1fr}
+.process-card:nth-child(2){border-right:0}
+.process-card{border-bottom:1px solid var(--line);padding:20px 12px 20px 0}
+.process-card:not(:first-child){padding-left:12px}
+.contact-grid{grid-template-columns:1fr}
 }
-@media(max-width:520px){
-  .container{width:90%}
-  .brand{font-size:16px}
-  .brand-logo{width:34px;height:34px}
-  .lang-btn{padding:9px}
-  #clientBtn{padding:9px}
-  .hero h1{letter-spacing:-3px}
-  .hero-copy{font-size:13px}
-  .section{padding:72px 0}
-  .section-head{display:block}
-  .section-head p{margin-top:15px}
-  .projects{grid-template-columns:1fr}
-  .project-image{aspect-ratio:1.15}
-  .service-row h3{font-size:19px}
-  .statement{padding:75px 0}
-  .statement h2{letter-spacing:-2px}
-  .process-grid{grid-template-columns:1fr}
-  .process-card,.process-card:not(:first-child){padding:20px 0;border-right:0}
-  .form-grid{grid-template-columns:1fr}
-  .full{grid-column:auto}
-  .modal-box{padding:18px}
-  .stats{grid-template-columns:1fr 1fr}
-  #adminModal .modal-box:has(#adminLogin){border-radius:22px}
-  #adminModal #adminLogin{padding:24px 20px}
-  .admin-login-heading{font-size:27px}
+@media(max-width:600px){
+.container{width:90%}
+.nav{gap:7px}
+.brand{font-size:16px;gap:7px}
+.brand-logo{width:35px;height:35px;font-size:17px}
+.nav-actions{gap:5px}
+.lang-btn{padding:9px 8px}
+#clientBtn{padding:9px 10px;font-size:10px}
+.hero{min-height:auto;padding:55px 0 48px}
+.hero h1{letter-spacing:-3px}
+.hero-copy{font-size:13px}
+.hero-art{width:min(310px,92%)}
+.core{width:90px;height:90px;border-radius:25px;font-size:32px}
+.orbit-tag{padding:8px;font-size:8px}
+.section{padding:72px 0}
+.section-head{display:block}
+.section-head p{margin-top:15px}
+.section-head h2{letter-spacing:-2px}
+.projects{grid-template-columns:1fr;gap:18px}
+.project-image{aspect-ratio:1.2}
+.project-meta h3{font-size:17px}
+.service-row{gap:12px}
+.service-row h3{font-size:19px}
+.statement{padding:72px 0}
+.statement h2{letter-spacing:-2px}
+.process-grid{grid-template-columns:1fr}
+.process-card,.process-card:not(:first-child){padding:20px 0;border-right:0}
+.form-grid{grid-template-columns:1fr}
+.full{grid-column:auto}
+.modal{padding:8px}
+.modal-box{padding:15px;border-radius:15px;max-height:94dvh;width:100%}
+.modal-head h2{font-size:22px}
+#adminModal .modal-box{width:100%;max-width:none;padding:15px}
+#adminDashboard .admin-layout{grid-template-columns:1fr;gap:13px}
+#adminDashboard .admin-sidebar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+#adminDashboard .admin-tab{padding:10px 3px;font-size:10px;text-align:center}
+#adminDashboard .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+#adminDashboard .stat{padding:9px 6px}
+#adminDashboard .stat strong{font-size:19px}
+#adminDashboard .stat span{font-size:9px}
+#adminDashboard .admin-content .field{width:100%}
+#adminDashboard .admin-content .btn{max-width:100%}
+#adminDashboard .admin-content h3{font-size:18px}
+#adminLogin .notice{font-size:11px}
+.footer-inner{align-items:flex-start}
 }
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 </style>
 </head>
@@ -249,9 +226,9 @@ th{color:var(--lime)}
 <body>
 <header class="topbar">
   <div class="container nav">
-    <a class="brand" href="#home">
+    <a class="brand" href="#home" aria-label="iDraw Designs home">
       <span class="brand-logo">iD</span>
-      <span>iDraw<span>Designs</span></span>
+      <span class="brand-name">iDraw<span>Designs</span></span>
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#work" data-en="Portfolio" data-bn="পোর্টফোলিও">Portfolio</a>
@@ -307,7 +284,7 @@ th{color:var(--lime)}
       <button class="filter" data-category="Motion">Motion</button>
     </div>
     <div class="projects" id="projectGrid"></div>
-    <p class="small" style="margin-top:22px">Portfolio projects can be managed from the demo admin panel. A backend is required to publish changes to all visitors.</p>
+    <p class="small" style="margin-top:22px" data-en="Demo projects are visual placeholders. Add your real work from the admin panel." data-bn="এগুলো ডেমো প্রজেক্ট। অ্যাডমিন প্যানেল থেকে নিজের কাজ যোগ করুন।">Demo projects are visual placeholders. Add your real work from the admin panel.</p>
   </div>
 </section>
 
@@ -349,22 +326,20 @@ th{color:var(--lime)}
       <div class="eyebrow">05 / LET'S WORK TOGETHER</div>
       <h2 data-en="Have a project in mind?" data-bn="আপনার কি কোনো প্রজেক্ট আছে?">Have a project in mind?</h2>
       <p data-en="Tell us what you're building. Share your requirements and we'll get back to you." data-bn="আপনার কাজের বিস্তারিত জানান। আপনার প্রয়োজন বুঝে যোগাযোগ করা হবে।">Tell us what you're building. Share your requirements and we'll get back to you.</p>
-      <p style="margin-top:20px"><a id="emailLink" href="mailto:hello@idrawdesigns.com">hello@idrawdesigns.com ↗</a></p>
+      <p style="margin-top:20px"><a href="mailto:hello@idrawdesigns.com">hello@idrawdesigns.com ↗</a></p>
       <p style="margin-top:12px"><a id="whatsappLink" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp ↗</a></p>
-      <p class="small" style="margin-top:20px">Replace the demo email and WhatsApp details with your real contact information before publishing.</p>
+      <p class="small" style="margin-top:20px">Update the email and WhatsApp details in the code before publishing.</p>
     </div>
     <form class="form-card" id="inquiryForm">
-      <h3 style="font:600 24px 'Space Grotesk';margin-bottom:20px">Project Inquiry</h3>
+      <h3 style="font:600 24px 'Space Grotesk';margin-bottom:20px" data-en="Project Inquiry" data-bn="প্রজেক্ট সম্পর্কে জানান">Project Inquiry</h3>
       <label>Name *<input class="field" name="name" required maxlength="100" autocomplete="name" placeholder="Your name"></label>
       <label>Email *<input class="field" name="email" type="email" required maxlength="150" autocomplete="email" placeholder="you@example.com"></label>
-      <label>Service
-        <select class="field" name="service"><option>Branding</option><option>Graphic Design</option><option>UI/UX</option><option>Motion</option><option>Other</option></select>
-      </label>
-      <label>Budget / timeline<input class="field" name="budget" maxlength="100" placeholder="Budget and deadline"></label>
+      <label>Service<select class="field" name="service"><option>Branding</option><option>Graphic Design</option><option>UI/UX</option><option>Motion</option><option>Other</option></select></label>
+      <label>Budget / timeline<input class="field" name="budget" maxlength="100" placeholder="Budget and deadline (optional)"></label>
       <label>Project brief *<textarea class="field" name="brief" required maxlength="3000" placeholder="Tell us about your project..."></textarea></label>
       <button class="btn btn-primary" type="submit">Prepare Inquiry ↗</button>
       <p class="form-status" id="inquiryStatus" aria-live="polite"></p>
-      <p class="small" style="margin-top:10px">This demo prepares an email and stores inquiries only in this browser.</p>
+      <p class="small" style="margin-top:10px">Demo form: opens your email app. A backend is required to save inquiries centrally.</p>
     </form>
   </div>
 </section>
@@ -372,14 +347,13 @@ th{color:var(--lime)}
 
 <footer>
   <div class="container footer-inner">
-    <a class="brand" href="#home">iDraw<span>Designs</span></a>
+    <a class="brand" href="#home"><span class="brand-logo">iD</span><span class="brand-name">iDraw<span>Designs</span></span></a>
     <p>© 2026 iDraw Designs. All rights reserved.</p>
     <div class="socials"><a href="#" aria-label="Instagram">Instagram</a><a href="#" aria-label="Behance">Behance</a><a href="#" aria-label="Facebook">Facebook</a></div>
     <button class="text-btn" id="adminBtn">Studio Admin ↗</button>
   </div>
 </footer>
 
-<!-- PROJECT PREVIEW -->
 <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
   <div class="modal-box">
     <div class="modal-head"><h2 id="projectModalTitle">Project</h2><button class="close-btn" data-close="projectModal">✕</button></div>
@@ -387,58 +361,35 @@ th{color:var(--lime)}
   </div>
 </div>
 
-<!-- CLIENT PORTAL -->
 <div class="modal" id="clientModal" role="dialog" aria-modal="true" aria-labelledby="clientModalTitle">
   <div class="modal-box">
     <div class="modal-head"><h2 id="clientModalTitle">Client Portal</h2><button class="close-btn" data-close="clientModal">✕</button></div>
-    <div class="notice">Client accounts are not connected yet. This portal is a UI prototype only and does not authenticate users or reveal private project data.</div>
+    <div class="notice">Client accounts are not connected yet. This is a UI prototype and does not authenticate users or display private project data.</div>
     <form id="clientForm">
       <label>Email<input class="field" type="email" name="email" required placeholder="Your registered email"></label>
-      <label>Project reference (optional)<input class="field" name="reference" maxlength="80" placeholder="Project ID"></label>
+      <label>Project reference<input class="field" name="reference" maxlength="80" placeholder="Project ID (optional)"></label>
       <button class="btn btn-primary" type="submit">Request Client Access</button>
       <p class="form-status" id="clientStatus" aria-live="polite"></p>
     </form>
   </div>
 </div>
 
-<!-- ADMIN LOGIN + DASHBOARD -->
 <div class="modal" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
   <div class="modal-box">
-    <div class="modal-head">
-      <h2 id="adminTitle">iDRAW / STUDIO ADMIN</h2>
-      <button class="close-btn" data-close="adminModal">✕</button>
-    </div>
-
+    <div class="modal-head"><h2 id="adminTitle">iDRAW / STUDIO ADMIN</h2><button class="close-btn" data-close="adminModal">✕</button></div>
     <div id="adminLogin">
-      <div class="admin-orb">iD</div>
-      <h3 class="admin-login-heading">Welcome <span>Back.</span></h3>
-      <p class="admin-login-subtitle">Sign in to your creative studio dashboard.<br>Manage projects. Build something remarkable.</p>
-
+      <div class="notice"><strong>Studio demo dashboard.</strong> Changes are saved only in this browser and are not published to other visitors. Do not store private client information here.</div>
       <form id="adminLoginForm">
-        <label class="admin-login-label">Username
-          <div class="admin-input-wrap">
-            <span class="admin-input-icon" aria-hidden="true">⌘</span>
-            <input class="field" name="username" required autocomplete="username" placeholder="Enter your username">
-          </div>
-        </label>
-
-        <label class="admin-login-label">Password
-          <div class="admin-input-wrap">
-            <span class="admin-input-icon" aria-hidden="true">⌑</span>
-            <input class="field" id="adminPassword" name="password" type="password" required autocomplete="current-password" placeholder="Enter your password">
-            <button class="admin-password-toggle" id="toggleAdminPassword" type="button" aria-label="Show password" aria-pressed="false">SHOW</button>
-          </div>
-        </label>
-
-        <button class="admin-submit" id="adminSubmit" type="submit"><span id="adminSubmitText">ACCESS DASHBOARD ↗</span></button>
+        <label>Demo username<input class="field" name="username" required autocomplete="username" placeholder="studio"></label>
+        <label>Demo password<input class="field" name="password" type="password" required autocomplete="current-password" placeholder="Enter demo password"></label>
+        <button class="btn btn-primary" type="submit">Enter Studio ↗</button>
         <p class="form-status" id="adminLoginStatus" aria-live="polite"></p>
+        <p class="small" style="margin-top:10px">Demo access only. This is not secure authentication.</p>
       </form>
-
-      <div class="admin-login-footer"><span>●</span> iDRAW DESIGNS · CREATIVE CONTROL CENTER</div>
     </div>
 
     <div id="adminDashboard" hidden>
-      <div class="notice">Demo dashboard. Changes are saved only in this browser and are not published to other visitors. Do not store private client information here.</div>
+      <div class="notice">Demo dashboard: projects and inquiries are stored in this browser only. They are not shared with other devices.</div>
       <div class="stats">
         <div class="stat"><strong id="statProjects">0</strong><span>Projects</span></div>
         <div class="stat"><strong id="statInquiries">0</strong><span>Inquiries on this device</span></div>
@@ -461,490 +412,201 @@ th{color:var(--lime)}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
-(function(){
 "use strict";
-
+(()=>{
 const $=(s,r=document)=>r.querySelector(s);
 const $$=(s,r=document)=>[...r.querySelectorAll(s)];
-
-const STORAGE={
-  projects:"idraw_demo_projects_v2",
-  inquiries:"idraw_demo_inquiries_v2",
-  language:"idraw_demo_language_v2"
-};
-
+const STORAGE={projects:"idraw_demo_projects_v2",inquiries:"idraw_demo_inquiries_v2",language:"idraw_demo_language_v2"};
 const defaults=[
-  {id:"p1",title:"iDraw Brand Identity",category:"Branding",description:"A bold visual identity concept for a creative studio.",art:"green",symbol:"iD",image:""},
-  {id:"p2",title:"Digital Experience",category:"UI/UX",description:"A modern interface concept focused on clarity and usability.",art:"blue",symbol:"UX",image:""},
-  {id:"p3",title:"Campaign Visual",category:"Graphic Design",description:"A high-energy campaign poster concept.",art:"orange",symbol:"CREATE",image:""},
-  {id:"p4",title:"Motion Experiments",category:"Motion",description:"A visual direction concept for motion and animation.",art:"purple",symbol:"MOVE",image:""}
+{id:"p1",title:"iDraw Brand Identity",category:"Branding",description:"A bold visual identity concept for a creative studio.",art:"green",symbol:"iD",image:""},
+{id:"p2",title:"Digital Experience",category:"UI/UX",description:"A modern interface concept focused on clarity and usability.",art:"blue",symbol:"UX",image:""},
+{id:"p3",title:"Campaign Visual",category:"Graphic Design",description:"A high-energy campaign poster concept.",art:"orange",symbol:"CREATE",image:""},
+{id:"p4",title:"Motion Experiments",category:"Motion",description:"A visual direction concept for motion and animation.",art:"purple",symbol:"MOVE",image:""}
 ];
-
 function readStore(key,fallback){
-  try{
-    const value=localStorage.getItem(key);
-    return value?JSON.parse(value):fallback;
-  }catch(e){return fallback}
+try{const v=localStorage.getItem(key);return v?JSON.parse(v):fallback}catch(e){return fallback}
 }
 function writeStore(key,value){
-  try{
-    localStorage.setItem(key,JSON.stringify(value));
-    return true;
-  }catch(e){
-    showToast("Browser storage is full or unavailable.");
-    return false;
-  }
+try{localStorage.setItem(key,JSON.stringify(value));return true}
+catch(e){showToast("Browser storage unavailable or full.");return false}
 }
-
 let projects=readStore(STORAGE.projects,defaults);
 let inquiries=readStore(STORAGE.inquiries,[]);
 let currentCategory="All";
 let currentLanguage=readStore(STORAGE.language,"en");
 let toastTimer;
-
 function showToast(message){
-  const toast=$("#toast");
-  toast.textContent=message;
-  toast.classList.add("show");
-  clearTimeout(toastTimer);
-  toastTimer=setTimeout(()=>toast.classList.remove("show"),2800);
+const t=$("#toast");t.textContent=message;t.classList.add("show");
+clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove("show"),2800);
 }
-
-function openModal(id){
-  const modal=document.getElementById(id);
-  if(modal)modal.classList.add("open");
-}
-function closeModal(id){
-  const modal=document.getElementById(id);
-  if(modal)modal.classList.remove("open");
-}
-
+function openModal(id){const m=$("#"+id);if(m)m.classList.add("open")}
+function closeModal(id){const m=$("#"+id);if(m)m.classList.remove("open")}
 $$("[data-close]").forEach(b=>b.addEventListener("click",()=>closeModal(b.dataset.close)));
-$$(".modal").forEach(modal=>{
-  modal.addEventListener("click",e=>{
-    if(e.target===modal)modal.classList.remove("open");
-  });
-});
-document.addEventListener("keydown",e=>{
-  if(e.key==="Escape")$$(".modal.open").forEach(m=>m.classList.remove("open"));
-});
-
+$$(".modal").forEach(m=>m.addEventListener("click",e=>{if(e.target===m)m.classList.remove("open")}));
+document.addEventListener("keydown",e=>{if(e.key==="Escape")$$(".modal.open").forEach(m=>m.classList.remove("open"))});
 const artColors={green:"art-green",blue:"art-blue",orange:"art-orange",purple:"art-purple"};
-
-function renderArt(container,project){
-  const art=document.createElement("div");
-  art.className="art-label "+(artColors[project.art]||"art-green");
-  art.textContent=project.symbol||"iD";
-  container.append(art);
-}
-
-function renderProjects(){
-  const grid=$("#projectGrid");
-  const visible=projects.filter(p=>currentCategory==="All"||p.category===currentCategory);
-  grid.replaceChildren();
-
-  if(!visible.length){
-    grid.append(make("div","No projects in this category yet.","empty"));
-    return;
-  }
-
-  visible.forEach(project=>{
-    const card=make("article",undefined,"project");
-    card.tabIndex=0;
-    card.setAttribute("role","button");
-    card.setAttribute("aria-label","Preview "+project.title);
-
-    const image=make("div",undefined,"project-image");
-    if(project.image){
-      const img=document.createElement("img");
-      img.src=project.image;
-      img.alt=project.title;
-      img.loading="lazy";
-      img.onerror=()=>{img.remove();renderArt(image,project)};
-      image.append(img);
-    }else renderArt(image,project);
-
-    const meta=make("div",undefined,"project-meta");
-    const info=make("div");
-    info.append(make("h3",project.title));
-    info.append(make("p",project.category+" · "+project.description));
-
-    const preview=make("button","View ↗","text-btn");
-    preview.type="button";
-    preview.addEventListener("click",e=>{
-      e.stopPropagation();
-      showProject(project.id);
-    });
-
-    meta.append(info,preview);
-    card.append(image,meta);
-    card.addEventListener("click",()=>showProject(project.id));
-    card.addEventListener("keydown",e=>{
-      if(e.key==="Enter"||e.key===" "){
-        e.preventDefault();
-        showProject(project.id);
-      }
-    });
-    grid.append(card);
-  });
-}
-
-function showProject(id){
-  const project=projects.find(p=>p.id===id);
-  if(!project)return;
-
-  $("#projectModalTitle").textContent=project.title;
-  const preview=$("#projectPreview");
-  preview.replaceChildren();
-
-  if(project.image){
-    const img=document.createElement("img");
-    img.src=project.image;
-    img.alt=project.title;
-    img.style.cssText="width:100%;max-height:380px;object-fit:contain;border-radius:10px;background:#14251a";
-    preview.append(img);
-  }else{
-    renderArt(preview,project);
-    preview.firstChild.style.borderRadius="10px";
-  }
-
-  const category=make("p",project.category,"eyebrow");
-  category.style.marginTop="20px";
-  const description=make("p",project.description,"muted");
-  description.style.cssText="margin-top:12px;line-height:1.8";
-
-  const link=make("a","Discuss a similar project ↗","btn btn-primary");
-  link.href="#contact";
-  link.style.marginTop="20px";
-  link.addEventListener("click",()=>closeModal("projectModal"));
-
-  preview.append(category,description,link);
-  openModal("projectModal");
-}
-
-$$(".filter").forEach(button=>{
-  button.addEventListener("click",()=>{
-    currentCategory=button.dataset.category;
-    $$(".filter").forEach(b=>b.classList.toggle("active",b===button));
-    renderProjects();
-  });
-});
-
-function applyLanguage(language){
-  currentLanguage=language;
-  document.documentElement.lang=language==="bn"?"bn":"en";
-  $$("[data-en][data-bn]").forEach(el=>{
-    el.textContent=el.dataset[language];
-  });
-  $("#langBtn").textContent=language==="en"?"বাংলা":"English";
-  writeStore(STORAGE.language,language);
-}
-$("#langBtn").addEventListener("click",()=>{
-  applyLanguage(currentLanguage==="en"?"bn":"en");
-});
-applyLanguage(currentLanguage==="bn"?"bn":"en");
-
-$("#menuBtn").addEventListener("click",()=>{
-  const nav=$("#navLinks");
-  const isOpen=nav.classList.toggle("open");
-  $("#menuBtn").setAttribute("aria-expanded",String(isOpen));
-});
-$$('#navLinks a').forEach(a=>a.addEventListener("click",()=>{
-  $("#navLinks").classList.remove("open");
-  $("#menuBtn").setAttribute("aria-expanded","false");
-}));
-
-// CONTACT INQUIRY
-$("#inquiryForm").addEventListener("submit",e=>{
-  e.preventDefault();
-  const form=e.currentTarget;
-  const data=Object.fromEntries(new FormData(form).entries());
-  data.id="i"+Date.now();
-  data.createdAt=new Date().toISOString();
-
-  inquiries.push(data);
-  const saved=writeStore(STORAGE.inquiries,inquiries);
-  updateStats();
-
-  const subject=encodeURIComponent("Project Inquiry — "+data.service);
-  const body=encodeURIComponent(
-    "Name: "+data.name+
-    "\nEmail: "+data.email+
-    "\nService: "+data.service+
-    "\nBudget / timeline: "+data.budget+
-    "\n\nProject brief:\n"+data.brief
-  );
-
-  $("#inquiryStatus").textContent=saved
-    ?"Opening your email app. Inquiry saved in this browser demo."
-    :"Opening your email app. Central inquiry storage is unavailable.";
-
-  window.location.href="mailto:hello@idrawdesigns.com?subject="+subject+"&body="+body;
-  form.reset();
-});
-
-// CLIENT PORTAL PROTOTYPE
-$("#clientBtn").addEventListener("click",()=>{
-  $("#clientStatus").textContent="";
-  openModal("clientModal");
-});
-$("#clientForm").addEventListener("submit",e=>{
-  e.preventDefault();
-  $("#clientStatus").textContent="Client access is not connected yet. Please contact the studio directly.";
-});
-
-// ADMIN LOGIN MODAL
-$("#adminBtn").addEventListener("click",()=>{
-  $("#adminLogin").hidden=false;
-  $("#adminDashboard").hidden=true;
-  $("#adminLoginStatus").textContent="";
-  $("#adminLoginForm").reset();
-  $("#adminPassword").type="password";
-  $("#toggleAdminPassword").textContent="SHOW";
-  $("#toggleAdminPassword").setAttribute("aria-pressed","false");
-  $("#adminSubmit").disabled=false;
-  $("#adminSubmitText").textContent="ACCESS DASHBOARD ↗";
-  openModal("adminModal");
-});
-
-$("#toggleAdminPassword").addEventListener("click",()=>{
-  const input=$("#adminPassword");
-  const showing=input.type==="text";
-  input.type=showing?"password":"text";
-  $("#toggleAdminPassword").textContent=showing?"SHOW":"HIDE";
-  $("#toggleAdminPassword").setAttribute("aria-label",showing?"Show password":"Hide password");
-  $("#toggleAdminPassword").setAttribute("aria-pressed",String(!showing));
-});
-
-$("#adminLoginForm").addEventListener("submit",e=>{
-  e.preventDefault();
-
-  const form=e.currentTarget;
-  const data=new FormData(form);
-  const username=String(data.get("username")||"").trim();
-  const password=String(data.get("password")||"");
-  const button=$("#adminSubmit");
-  const buttonText=$("#adminSubmitText");
-  const status=$("#adminLoginStatus");
-
-  if(button.disabled)return;
-  button.disabled=true;
-  buttonText.textContent="VERIFYING ACCESS...";
-  status.textContent="";
-
-  // Frontend demo only. This is NOT secure authentication.
-  setTimeout(()=>{
-    button.disabled=false;
-    buttonText.textContent="ACCESS DASHBOARD ↗";
-
-    if(username==="studio"&&password==="demo123"){
-      $("#adminLogin").hidden=true;
-      $("#adminDashboard").hidden=false;
-      renderAdminTab("projects");
-      updateStats();
-      showToast("Demo login successful!");
-    }else{
-      status.textContent="Access denied. Check your demo credentials.";
-      $("#adminPassword").value="";
-      $("#adminPassword").focus();
-    }
-  },650);
-});
-
-$("#adminLogout").addEventListener("click",()=>{
-  $("#adminDashboard").hidden=true;
-  $("#adminLogin").hidden=false;
-  closeModal("adminModal");
-});
-
-$$("[data-admin-tab]").forEach(button=>{
-  button.addEventListener("click",()=>{
-    $$(".admin-tab").forEach(tab=>tab.classList.toggle("active",tab===button));
-    renderAdminTab(button.dataset.adminTab);
-  });
-});
-
-function updateStats(){
-  $("#statProjects").textContent=projects.length;
-  $("#statInquiries").textContent=inquiries.length;
-}
-
 function make(tag,text,className){
-  const el=document.createElement(tag);
-  if(text!==undefined)el.textContent=text;
-  if(className)el.className=className;
-  return el;
+const el=document.createElement(tag);
+if(text!==undefined)el.textContent=text;
+if(className)el.className=className;
+return el;
 }
-
-function renderAdminTab(tab){
-  const content=$("#adminContent");
-  content.replaceChildren();
-
-  if(tab==="projects"){
-    content.append(make("h3","Manage Portfolio"));
-    content.append(make("p","Changes are stored in this browser only.","small"));
-
-    const form=document.createElement("form");
-    form.style.marginTop="18px";
-
-    const titleLabel=make("label","Project title");
-    const title=document.createElement("input");
-    title.className="field";
-    title.name="title";
-    title.required=true;
-    title.maxLength=100;
-    titleLabel.append(title);
-
-    const categoryLabel=make("label","Category");
-    const category=document.createElement("select");
-    category.className="field";
-    category.name="category";
-    ["Branding","Graphic Design","UI/UX","Motion"].forEach(value=>{
-      const option=make("option",value);
-      option.value=value;
-      category.append(option);
-    });
-    categoryLabel.append(category);
-
-    const descLabel=make("label","Description");
-    const desc=document.createElement("textarea");
-    desc.className="field";
-    desc.name="description";
-    desc.required=true;
-    desc.maxLength=500;
-    descLabel.append(desc);
-
-    const imageLabel=make("label","Image URL (optional)");
-    const image=document.createElement("input");
-    image.className="field";
-    image.name="image";
-    image.type="url";
-    image.placeholder="https://example.com/design.jpg";
-    imageLabel.append(image);
-
-    form.append(
-      titleLabel,categoryLabel,descLabel,imageLabel,
-      make("p","Use a publicly accessible image URL.","small")
-    );
-
-    const submit=make("button","Add Project +","btn btn-primary");
-    submit.type="submit";
-    form.append(submit);
-    content.append(form);
-
-    const heading=make("h3","Existing Projects");
-    heading.style.marginTop="25px";
-    content.append(heading);
-
-    const list=make("div");
-    list.style.marginTop="10px";
-
-    projects.forEach(project=>{
-      const row=make("div");
-      row.style.cssText="padding:12px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center";
-
-      const info=make("div");
-      info.append(make("strong",project.title),make("p",project.category,"small"));
-
-      const remove=make("button","Delete","btn btn-small");
-      remove.type="button";
-      remove.addEventListener("click",()=>{
-        if(!confirm("Delete "+project.title+" from this browser demo?"))return;
-        const previous=projects;
-        projects=projects.filter(p=>p.id!==project.id);
-        if(writeStore(STORAGE.projects,projects)){
-          renderProjects();
-          updateStats();
-          renderAdminTab("projects");
-          showToast("Project deleted.");
-        }else projects=previous;
-      });
-
-      row.append(info,remove);
-      list.append(row);
-    });
-    content.append(list);
-
-    form.addEventListener("submit",e=>{
-      e.preventDefault();
-      const data=new FormData(form);
-      const project={
-        id:"p"+Date.now(),
-        title:String(data.get("title")||"").trim(),
-        category:String(data.get("category")),
-        description:String(data.get("description")||"").trim(),
-        image:String(data.get("image")||"").trim(),
-        art:"green",
-        symbol:"iD"
-      };
-
-      if(!project.title||!project.description)return;
-      const previous=projects;
-      projects=[project,...projects];
-
-      if(writeStore(STORAGE.projects,projects)){
-        renderProjects();
-        updateStats();
-        renderAdminTab("projects");
-        showToast("Project added to this browser.");
-      }else projects=previous;
-    });
-  }
-
-  if(tab==="inquiries"){
-    content.append(make("h3","Inquiries"));
-    content.append(make("p","Inquiries saved in this browser only.","small"));
-
-    if(!inquiries.length){
-      content.append(make("div","No local inquiries yet.","empty"));
-      return;
-    }
-
-    const wrap=make("div",undefined,"table-wrap");
-    const table=document.createElement("table");
-    const thead=document.createElement("thead");
-    const headrow=document.createElement("tr");
-
-    ["Name / Email","Service","Brief"].forEach(t=>headrow.append(make("th",t)));
-    thead.append(headrow);
-
-    const tbody=document.createElement("tbody");
-    inquiries.forEach(item=>{
-      const tr=document.createElement("tr");
-      const name=make("td");
-      name.append(make("strong",item.name),make("p",item.email,"small"));
-      tr.append(name,make("td",item.service),make("td",item.brief));
-      tbody.append(tr);
-    });
-
-    table.append(thead,tbody);
-    wrap.append(table);
-    content.append(wrap);
-  }
-
-  if(tab==="settings"){
-    content.append(make("h3","Production Setup"));
-    const steps=[
-      "Create a Firebase or Supabase project.",
-      "Enable real authentication and server-side admin roles.",
-      "Create projects, inquiries and client project records.",
-      "Upload portfolio images to storage.",
-      "Apply database security policies for each client.",
-      "Connect the dashboard and forms to the backend.",
-      "Configure email notifications and password recovery.",
-      "Test all permissions before using real client data."
-    ];
-    const list=document.createElement("ol");
-    list.style.cssText="padding-left:20px;line-height:2;color:var(--muted);font-size:12px;margin-top:15px";
-    steps.forEach(step=>list.append(make("li",step)));
-    content.append(list);
-    content.append(make("p","This static website is a prototype. It does not provide secure server-side authentication.","notice"));
-  }
+function renderArt(container,p){
+const art=make("div",undefined,"art-label "+(artColors[p.art]||"art-green"));
+art.append(make("span",p.symbol||"iD"));container.append(art);
 }
-
+function renderProjects(){
+const grid=$("#projectGrid");grid.replaceChildren();
+const visible=projects.filter(p=>currentCategory==="All"||p.category===currentCategory);
+if(!visible.length){grid.append(make("div","No projects in this category yet.","empty"));return}
+visible.forEach(p=>{
+const card=make("article",undefined,"project");card.tabIndex=0;card.setAttribute("role","button");card.setAttribute("aria-label","Preview "+p.title);
+const image=make("div",undefined,"project-image");
+if(p.image){
+const img=make("img");img.src=p.image;img.alt=p.title;img.loading="lazy";
+img.onerror=()=>{img.remove();if(!image.querySelector(".art-label"))renderArt(image,p)};
+image.append(img);
+}else renderArt(image,p);
+const meta=make("div",undefined,"project-meta"),info=make("div");
+info.append(make("h3",p.title),make("p",p.category+" · "+p.description));
+const preview=make("button","View ↗","text-btn");preview.type="button";preview.addEventListener("click",e=>{e.stopPropagation();showProject(p.id)});
+meta.append(info,preview);card.append(image,meta);
+card.addEventListener("click",()=>showProject(p.id));
+card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();showProject(p.id)}});
+grid.append(card);
+});
+}
+function showProject(id){
+const p=projects.find(x=>x.id===id);if(!p)return;
+$("#projectModalTitle").textContent=p.title;
+const preview=$("#projectPreview");preview.replaceChildren();
+if(p.image){
+const img=make("img");img.src=p.image;img.alt=p.title;img.style.cssText="width:100%;max-height:380px;object-fit:contain;border-radius:10px;background:#14251a";preview.append(img);
+}else{
+renderArt(preview,p);preview.firstChild.style.cssText="min-height:220px;border-radius:10px;margin-bottom:20px";
+}
+const category=make("p",p.category,"eyebrow");category.style.marginTop="20px";
+const desc=make("p",p.description,"muted");desc.style.cssText="margin-top:12px;line-height:1.8";
+const link=make("a","Discuss a similar project ↗","btn btn-primary");link.style.marginTop="20px";link.href="#contact";link.addEventListener("click",()=>closeModal("projectModal"));
+preview.append(category,desc,link);openModal("projectModal");
+}
+$$(".filter").forEach(b=>b.addEventListener("click",()=>{
+currentCategory=b.dataset.category;
+$$(".filter").forEach(x=>x.classList.toggle("active",x===b));
 renderProjects();
+}));
+function applyLanguage(language){
+currentLanguage=language;document.documentElement.lang=language==="bn"?"bn":"en";
+$$("[data-en][data-bn]").forEach(el=>{el.textContent=el.dataset[language]});
+$("#langBtn").textContent=language==="en"?"বাংলা":"English";
+writeStore(STORAGE.language,language);
+}
+$("#langBtn").addEventListener("click",()=>applyLanguage(currentLanguage==="en"?"bn":"en"));
+applyLanguage(currentLanguage==="bn"?"bn":"en");
+$("#menuBtn").addEventListener("click",()=>{
+const nav=$("#navLinks"),isOpen=nav.classList.toggle("open");
+$("#menuBtn").setAttribute("aria-expanded",String(isOpen));
+});
+$$("#navLinks a").forEach(a=>a.addEventListener("click",()=>{$("#navLinks").classList.remove("open");$("#menuBtn").setAttribute("aria-expanded","false")}));
+$("#inquiryForm").addEventListener("submit",e=>{
+e.preventDefault();
+const form=e.currentTarget,data=Object.fromEntries(new FormData(form).entries());
+data.id="i"+Date.now();data.createdAt=new Date().toISOString();
+inquiries.push(data);
+if(!writeStore(STORAGE.inquiries,inquiries)){inquiries.pop();return}
 updateStats();
-
+const subject=encodeURIComponent("Project Inquiry — "+data.service);
+const body=encodeURIComponent("Name: "+data.name+"\nEmail: "+data.email+"\nService: "+data.service+"\nBudget / timeline: "+data.budget+"\n\nProject brief:\n"+data.brief);
+$("#inquiryStatus").textContent="Opening your email app. This inquiry is saved only in this browser demo.";
+window.location.href="mailto:hello@idrawdesigns.com?subject="+subject+"&body="+body;
+form.reset();
+});
+$("#clientBtn").addEventListener("click",()=>{ $("#clientStatus").textContent="";openModal("clientModal")});
+$("#clientForm").addEventListener("submit",e=>{e.preventDefault();$("#clientStatus").textContent="Prototype only: client access is not connected. Please contact the studio directly."});
+$("#adminBtn").addEventListener("click",()=>{
+$("#adminLogin").hidden=false;$("#adminDashboard").hidden=true;$("#adminLoginStatus").textContent="";$("#adminLoginForm").reset();openModal("adminModal");
+});
+$("#adminLoginForm").addEventListener("submit",e=>{
+e.preventDefault();const d=new FormData(e.currentTarget);
+const username=String(d.get("username")||"").trim(),password=String(d.get("password")||"");
+if(username==="studio"&&password==="demo123"){
+$("#adminLogin").hidden=true;$("#adminDashboard").hidden=false;renderAdminTab("projects");updateStats();
+}else{$("#adminLoginStatus").textContent="Incorrect demo username or password."}
+});
+$("#adminLogout").addEventListener("click",()=>{closeModal("adminModal");$("#adminDashboard").hidden=true;$("#adminLogin").hidden=false});
+$$("[data-admin-tab]").forEach(b=>b.addEventListener("click",()=>{
+$$(".admin-tab").forEach(x=>x.classList.toggle("active",x===b));renderAdminTab(b.dataset.adminTab);
+}));
+function updateStats(){
+$("#statProjects").textContent=projects.length;
+$("#statInquiries").textContent=inquiries.length;
+}
+function renderAdminTab(tab){
+const content=$("#adminContent");content.replaceChildren();
+if(tab==="projects"){
+content.append(make("h3","Manage Portfolio"),make("p","Changes are saved in this browser only.","small"));
+const form=document.createElement("form");form.id="addProjectForm";form.style.marginTop="16px";
+const titleLabel=make("label","Project title"),title=make("input");title.className="field";title.name="title";title.required=true;title.maxLength=100;title.placeholder="Enter project title";titleLabel.append(title);
+const catLabel=make("label","Category"),category=make("select");category.className="field";category.name="category";
+["Branding","Graphic Design","UI/UX","Motion"].forEach(v=>{const o=make("option",v);o.value=v;category.append(o)});catLabel.append(category);
+const descLabel=make("label","Description"),desc=make("textarea");desc.className="field";desc.name="description";desc.required=true;desc.maxLength=500;desc.placeholder="Describe this project";descLabel.append(desc);
+const imageLabel=make("label","Image URL (optional)"),image=make("input");image.className="field";image.name="image";image.type="url";image.placeholder="https://example.com/design.jpg";imageLabel.append(image);
+form.append(titleLabel,catLabel,descLabel,imageLabel,make("p","Use a public image URL. Image upload is not supported in this demo.","small"));
+const submit=make("button","Add Project +","btn btn-primary");submit.type="submit";form.append(submit);content.append(form);
+const heading=make("h3","Existing Projects");heading.style.marginTop="24px";content.append(heading);
+const list=make("div");list.style.marginTop="8px";
+projects.forEach(p=>{
+const row=make("div");row.style.cssText="padding:13px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center";
+const info=make("div");info.style.minWidth="0";info.append(make("strong",p.title),make("p",p.category,"small"));
+const remove=make("button","Delete","btn btn-small");remove.type="button";
+remove.addEventListener("click",()=>{
+if(!confirm("Delete "+p.title+" from this browser demo?"))return;
+const old=projects;projects=projects.filter(x=>x.id!==p.id);
+if(writeStore(STORAGE.projects,projects)){renderProjects();renderAdminTab("projects");updateStats();showToast("Project deleted")}else projects=old;
+});
+row.append(info,remove);list.append(row);
+});
+content.append(list);
+form.addEventListener("submit",e=>{
+e.preventDefault();const d=new FormData(form);
+const p={id:"p"+Date.now(),title:String(d.get("title")||"").trim(),category:String(d.get("category")),description:String(d.get("description")||"").trim(),image:String(d.get("image")||"").trim(),art:"green",symbol:"iD"};
+if(!p.title||!p.description)return;
+const old=projects;projects=[p,...projects];
+if(writeStore(STORAGE.projects,projects)){renderProjects();updateStats();renderAdminTab("projects");showToast("Project added successfully")}
+else projects=old;
+});
+}
+if(tab==="inquiries"){
+content.append(make("h3","Inquiries"),make("p","Inquiries saved in this browser only.","small"));
+if(!inquiries.length){content.append(make("div","No local inquiries yet.","empty"));return}
+const wrap=make("div",undefined,"table-wrap"),table=document.createElement("table"),thead=document.createElement("thead"),hr=document.createElement("tr");
+["Name / Email","Service","Brief"].forEach(v=>hr.append(make("th",v)));
+thead.append(hr);const tbody=document.createElement("tbody");
+inquiries.forEach(i=>{
+const tr=document.createElement("tr"),name=make("td");
+name.append(make("strong",i.name),make("p",i.email,"small"));
+tr.append(name,make("td",i.service),make("td",i.brief));tbody.append(tr);
+});
+table.append(thead,tbody);wrap.append(table);content.append(wrap);
+}
+if(tab==="settings"){
+content.append(make("h3","Production Setup"));
+const steps=[
+"Create a Firebase or Supabase project.",
+"Enable real authentication and server-side admin permissions.",
+"Create projects, inquiries, clients and project update records.",
+"Upload images to storage and save their public URLs.",
+"Configure database security so clients only see their own projects.",
+"Connect the forms and dashboard to the backend.",
+"Configure email notifications and password recovery.",
+"Test access permissions before storing real client information."
+];
+const list=document.createElement("ol");list.style.cssText="padding-left:20px;line-height:2;color:var(--muted);font-size:12px;margin-top:15px";
+steps.forEach(s=>list.append(make("li",s)));
+content.append(list,make("p","This static prototype does not provide real authentication, server uploads or cross-device syncing.","notice"));
+}
+}
+renderProjects();updateStats();
 })();
 </script>
 </body>
