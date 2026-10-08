@@ -1,765 +1,843 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07150d">
+<title>iDraw Designs | Creative Studio</title>
+<meta name="description" content="iDraw Designs — Graphic Design, Branding, UI/UX and Creative Digital Experiences.">
 
-  <title>iDraw Designs — Creative Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <meta name="description"
-    content="iDraw Designs — Creative Graphic Design, UI/UX, Branding and Motion Portfolio">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+<style>
+:root{--bg:#07150d;--panel:#0e2115;--lime:#b3ed36;--white:#f4f7ef;--muted:#a5b2a7;--line:#26382b;--orange:#ff713d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--white);font-family:Inter,sans-serif;overflow-x:hidden}
+body,button,input,textarea,select{font-family:Inter,sans-serif}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+button,input,textarea,select{font-size:14px}
+button:disabled{opacity:.5;cursor:not-allowed}
+img{max-width:100%}
+.container{width:min(1180px,88%);margin:auto}
+.muted{color:var(--muted)}
+.small{font-size:12px;color:var(--muted)}
+.eyebrow{color:var(--lime);font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border:1px solid var(--line);border-radius:30px;background:transparent;color:var(--white);font-weight:600;transition:.25s}
+.btn:hover{transform:translateY(-2px);border-color:var(--lime)}
+.btn-primary{background:var(--lime);color:#10200b;border-color:var(--lime)}
+.btn-primary:hover{background:#d0ff75;color:#10200b}
+.btn-small{padding:8px 12px;font-size:12px}
+.field{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:#08180e;color:white;margin-top:7px}
+.field::placeholder{color:#75847a}
+label{display:block;font-size:12px;color:#c4cec6;margin-bottom:14px}
+textarea.field{resize:vertical;min-height:110px}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(7,21,13,.93);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;font:700 20px "Space Grotesk";white-space:nowrap}
+.brand span{color:var(--lime)}
+.brand-logo{height:40px;width:40px;border-radius:10px;object-fit:contain;background:var(--lime);color:#10200b;display:grid;place-items:center;font-weight:800}
+.nav-links{display:flex;align-items:center;gap:25px;font-size:12px;color:#d1d9d1}
+.nav-links a:hover{color:var(--lime)}
+.nav-actions{display:flex;gap:8px;align-items:center}
+.lang-btn,.menu-btn{padding:10px 12px;border:1px solid var(--line);border-radius:24px;color:white;background:transparent}
+.menu-btn{display:none}
+.hero{min-height:680px;padding:100px 0 90px;position:relative;display:flex;align-items:center;overflow:hidden}
+.hero:before{content:"";position:absolute;width:600px;height:600px;right:-150px;top:40px;background:radial-gradient(circle,rgba(179,237,54,.16),transparent 67%);pointer-events:none}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(#26382b66 1px,transparent 1px),linear-gradient(90deg,#26382b66 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(#000,transparent 90%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px}
+.hero h1{font:700 clamp(54px,7.5vw,100px)/.92 "Space Grotesk";letter-spacing:-5px;margin:23px 0}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero-copy{max-width:540px;color:var(--muted);line-height:1.85;font-size:15px}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-art{aspect-ratio:1;max-width:470px;width:100%;justify-self:end;position:relative;display:grid;place-items:center}
+.ring{position:absolute;inset:5%;border:1px solid #b3ed3655;border-radius:50%;animation:spin 25s linear infinite}
+.ring.r2{inset:19%;border-style:dashed;animation-direction:reverse;animation-duration:18s}
+.ring.r3{inset:32%;border-color:#ffffff25}
+.core{width:120px;height:120px;border-radius:32px;background:var(--lime);color:#10200b;display:grid;place-items:center;font:800 42px "Space Grotesk";transform:rotate(-8deg);box-shadow:0 0 75px #b3ed3644;animation:bob 4s ease-in-out infinite}
+.orbit-tag{position:absolute;padding:12px;background:#102218;border:1px solid var(--line);font-size:10px;letter-spacing:1px;box-shadow:0 12px 30px #0005}
+.orbit-tag strong{display:block;color:var(--lime);margin-top:5px}
+.tag-a{top:14%;left:4%;transform:rotate(-6deg)}
+.tag-b{right:0;top:48%;transform:rotate(5deg)}
+.tag-c{bottom:8%;left:22%;transform:rotate(-4deg)}
+.ticker{overflow:hidden;border-block:1px solid var(--line);padding:17px 0;color:var(--lime);font:700 12px "Space Grotesk";letter-spacing:2px;white-space:nowrap}
+.ticker div{width:max-content;animation:marquee 28s linear infinite}
+.section{padding:100px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:36px}
+.section-head h2{font:700 clamp(36px,5vw,64px)/1 "Space Grotesk";letter-spacing:-3px;margin-top:12px}
+.section-head p{max-width:390px;color:var(--muted);font-size:13px;line-height:1.8}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.filter{border:1px solid var(--line);border-radius:30px;background:transparent;color:#cbd5cc;padding:10px 15px;font-size:12px}
+.filter.active,.filter:hover{background:var(--lime);color:#10200b;border-color:var(--lime)}
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px}
+.project{min-width:0;cursor:pointer;transition:transform .3s}
+.project:hover{transform:translateY(-5px)}
+.project-image{position:relative;aspect-ratio:1.25;overflow:hidden;display:grid;place-items:center;background:#17291c}
+.project-image img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.project:hover .project-image img{transform:scale(1.04)}
+.art-label{font:800 clamp(38px,7vw,90px)/.9 "Space Grotesk";letter-spacing:-4px;text-align:center}
+.art-label span{color:var(--lime)}
+.art-green{background:#91d915;color:#07150d}
+.art-blue{background:#205ff0}
+.art-orange{background:#ff713d;color:#1b130d}
+.art-purple{background:#6b4ce6}
+.project-meta{display:flex;justify-content:space-between;align-items:start;gap:12px;padding:15px 2px}
+.project-meta h3{font:600 19px "Space Grotesk"}
+.project-meta p{font-size:11px;color:var(--muted);margin-top:6px}
+.project-actions{display:flex;gap:6px}
+.text-btn{border:0;background:transparent;color:var(--lime);font-size:12px}
+.services-section{background:#0b1d11;border-block:1px solid var(--line)}
+.service-list{border-top:1px solid var(--line)}
+.service-row{display:grid;grid-template-columns:55px 1fr 1fr 25px;gap:20px;align-items:center;padding:26px 5px;border-bottom:1px solid var(--line)}
+.service-row .number{color:var(--lime);font-size:11px}
+.service-row h3{font:600 25px "Space Grotesk"}
+.service-row p{color:var(--muted);font-size:12px;line-height:1.7}
+.service-row b{color:var(--lime)}
+.statement{padding:110px 0;background:var(--lime);color:#0b1b0e}
+.statement h2{max-width:950px;font:700 clamp(43px,7vw,84px)/.98 "Space Grotesk";letter-spacing:-4px;margin-top:22px}
+.statement .eyebrow{color:#304c0a}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:35px;border-top:1px solid var(--line)}
+.process-card{padding:25px 18px 20px 0;border-right:1px solid var(--line)}
+.process-card:not(:first-child){padding-left:18px}
+.process-card:last-child{border-right:0}
+.process-card span{color:var(--lime);font-size:11px}
+.process-card h3{font:600 23px "Space Grotesk";margin:28px 0 10px}
+.process-card p{font-size:12px;color:var(--muted);line-height:1.7}
+.contact-panel{padding:75px 0 95px;background:#0b2114}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.contact-grid h2{font:700 clamp(45px,6vw,75px)/.95 "Space Grotesk";letter-spacing:-4px;margin:20px 0}
+.contact-grid>div>p{color:var(--muted);font-size:13px;line-height:1.8;max-width:420px}
+.form-card,.panel-card{background:#0e2115;border:1px solid var(--line);border-radius:18px;padding:25px}
+.form-status{font-size:12px;color:var(--lime);margin-top:12px;line-height:1.6}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:11px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.socials{display:flex;gap:12px}
+.socials a:hover{color:var(--lime)}
+.modal{position:fixed;inset:0;z-index:1000;background:#000b;display:none;align-items:center;justify-content:center;padding:18px;overflow:auto}
+.modal.open{display:flex}
+.modal-box{width:min(680px,100%);max-height:90vh;overflow:auto;background:#0b1d11;border:1px solid var(--line);border-radius:18px;padding:25px;position:relative}
+.modal-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:22px}
+.modal-head h2{font:600 25px "Space Grotesk"}
+.close-btn{border:1px solid var(--line);background:transparent;color:white;border-radius:8px;padding:7px 11px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.full{grid-column:1/-1}
+.divider{height:1px;background:var(--line);margin:22px 0}
+.notice{background:#17291c;border:1px solid var(--line);padding:12px;border-radius:10px;color:var(--muted);font-size:12px;line-height:1.7;margin-bottom:18px}
+.admin-layout{display:grid;grid-template-columns:190px 1fr;gap:20px}
+.admin-sidebar{display:flex;flex-direction:column;gap:8px}
+.admin-tab{padding:12px;text-align:left;background:transparent;border:1px solid transparent;border-radius:9px;color:var(--muted)}
+.admin-tab.active,.admin-tab:hover{background:#1b3020;color:var(--lime);border-color:var(--line)}
+.admin-content{min-width:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}
+.stat{padding:15px;background:#12271a;border:1px solid var(--line);border-radius:12px}
+.stat strong{display:block;font:700 28px "Space Grotesk";color:var(--lime)}
+.stat span{font-size:11px;color:var(--muted)}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th,td{text-align:left;padding:12px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--lime);font-weight:600}
+.empty{padding:25px;text-align:center;color:var(--muted);font-size:12px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:1200;background:var(--lime);color:#10200b;padding:12px 18px;border-radius:30px;font-size:12px;font-weight:700;display:none;max-width:90%;text-align:center}
+.toast.show{display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes bob{50%{transform:translateY(-10px) rotate(4deg)}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@media(max-width:850px){
+.nav-links{display:none;position:absolute;top:76px;left:0;right:0;padding:18px 6%;background:#07150d;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:20px}
+.nav-links.open{display:flex}
+.menu-btn{display:block}
+.nav .container{width:92%}
+.hero-inner{grid-template-columns:1fr}
+.hero{padding:90px 0 55px}
+.hero-art{width:min(400px,90%);justify-self:center;grid-row:1}
+.hero-content{grid-row:2}
+.hero h1{font-size:clamp(55px,12vw,88px)}
+.service-row{grid-template-columns:35px 1fr 25px}
+.service-row p{grid-column:2}
+.service-row b{grid-column:3;grid-row:1}
+.process-grid{grid-template-columns:1fr 1fr}
+.process-card:nth-child(2){border-right:0}
+.process-card{border-bottom:1px solid var(--line);padding:20px 12px 20px 0}
+.process-card:not(:first-child){padding-left:12px}
+.contact-grid{grid-template-columns:1fr}
+.admin-layout{grid-template-columns:1fr}
+.admin-sidebar{flex-direction:row;flex-wrap:wrap}
+.admin-tab{flex:1}
+}
+@media(max-width:520px){
+.container{width:90%}
+.brand{font-size:17px}
+.brand-logo{width:35px;height:35px}
+.lang-btn{padding:9px}
+.hero{min-height:auto}
+.hero h1{letter-spacing:-3px}
+.hero-copy{font-size:13px}
+.section{padding:75px 0}
+.section-head{display:block}
+.section-head p{margin-top:15px}
+.projects{grid-template-columns:1fr}
+.project-image{aspect-ratio:1.15}
+.project-meta{flex-wrap:wrap}
+.service-row h3{font-size:20px}
+.statement{padding:75px 0}
+.statement h2{letter-spacing:-2px}
+.process-grid{grid-template-columns:1fr}
+.process-card,.process-card:not(:first-child){padding:20px 0;border-right:0}
+.form-grid{grid-template-columns:1fr}
+.full{grid-column:auto}
+.modal-box{padding:18px}
+.stats{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){
+*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
 </head>
 
 <body>
 
-  <!-- Cursor Glow -->
-  <div class="cursor-glow"></div>
-
-  <!-- Noise -->
-  <div class="noise"></div>
-
-  <!-- ================= NAVBAR ================= -->
-
-  <header class="navbar">
-
-    <a href="#home" class="brand">
-
-      <div class="logo-box">
-        iD
-      </div>
-
-      <div class="brand-name">
-        iDraw<span>Designs</span>
-      </div>
-
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <img class="brand-logo" src="assets/logo-mark.jpg" alt="iDraw Designs" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span class=&quot;brand-logo&quot;>iD</span>')">
+      <span style="color:var(--white)">iDraw<span>Designs</span></span>
     </a>
 
-
-    <nav class="desktop-nav">
-
-      <a href="#work"
-        data-en="Work"
-        data-bn="কাজ">
-        Work
-      </a>
-
-      <a href="#services"
-        data-en="Services"
-        data-bn="সেবা">
-        Services
-      </a>
-
-      <a href="#about"
-        data-en="About"
-        data-bn="পরিচিতি">
-        About
-      </a>
-
-      <a href="#contact"
-        data-en="Contact"
-        data-bn="যোগাযোগ">
-        Contact
-      </a>
-
+    <nav class="nav-links" id="navLinks">
+      <a href="#work" data-en="Portfolio" data-bn="পোর্টফোলিও">Portfolio</a>
+      <a href="#services" data-en="Services" data-bn="সেবা">Services</a>
+      <a href="#about" data-en="About" data-bn="পরিচিতি">About</a>
+      <a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
     </nav>
 
-
     <div class="nav-actions">
+      <button class="lang-btn" id="langBtn">বাংলা</button>
+      <button class="btn btn-small" id="clientBtn" data-en="Client Portal" data-bn="ক্লায়েন্ট পোর্টাল">Client Portal</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+    </div>
+  </div>
+</header>
 
-      <button id="languageBtn">
-        বাংলা
-      </button>
-
-      <a href="#contact" class="talk-btn">
-        Let's Talk ↗
-      </a>
-
-      <button id="menuBtn" class="menu-btn">
-        ☰
-      </button>
-
+<main id="home">
+<section class="hero">
+  <div class="grid-bg"></div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="eyebrow" data-en="Independent Creative Studio" data-bn="স্বাধীন ক্রিয়েটিভ স্টুডিও">Independent Creative Studio</div>
+      <h1 data-en="Ideas, drawn" data-bn="ভাবনা আঁকি,">Ideas, drawn<br><em>differently.</em></h1>
+      <p class="hero-copy" data-en="We create bold visual identities, digital products and meaningful experiences for ambitious brands." data-bn="আমরা তৈরি করি স্বতন্ত্র ভিজ্যুয়াল আইডেন্টিটি, ডিজিটাল প্রোডাক্ট এবং আধুনিক ব্র্যান্ডের জন্য অর্থবহ অভিজ্ঞতা।">We create bold visual identities, digital products and meaningful experiences for ambitious brands.</p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#work" data-en="Explore Portfolio ↓" data-bn="পোর্টফোলিও দেখুন ↓">Explore Portfolio ↓</a>
+        <a class="btn" href="#contact" data-en="Start a Project ↗" data-bn="প্রজেক্ট শুরু করুন ↗">Start a Project ↗</a>
+      </div>
+      <p class="small" style="margin-top:25px">GRAPHIC DESIGN · BRANDING · UI/UX · MOTION</p>
     </div>
 
-  </header>
-
-
-  <!-- ================= HERO ================= -->
-
-  <main id="home">
-
-    <section class="hero">
-
-      <div class="hero-grid"></div>
-
-
-      <div class="hero-content reveal">
-
-        <div class="eyebrow">
-
-          <span class="dot"></span>
-
-          <span
-            data-en="Independent Creative Studio"
-            data-bn="স্বাধীন ক্রিয়েটিভ স্টুডিও">
-
-            Independent Creative Studio
-
-          </span>
-
-        </div>
-
-
-        <h1>
-
-          <span
-            data-en="Ideas, drawn"
-            data-bn="ভাবনা আঁকি,">
-
-            Ideas, drawn
-
-          </span>
-
-          <br>
-
-          <em
-            data-en="differently."
-            data-bn="ভিন্নভাবে।">
-
-            differently.
-
-          </em>
-
-        </h1>
-
-
-        <p
-          data-en="We create bold identities, memorable visuals and digital experiences that make brands impossible to ignore."
-          data-bn="আমরা তৈরি করি শক্তিশালী ব্র্যান্ড আইডেন্টিটি, মনে থাকার মতো ভিজ্যুয়াল এবং এমন ডিজিটাল অভিজ্ঞতা যা ব্র্যান্ডকে আলাদা করে তোলে।">
-
-          We create bold identities, memorable visuals and digital experiences that make brands impossible to ignore.
-
-        </p>
-
-
-        <div class="hero-buttons">
-
-          <a href="#work" class="primary-btn">
-            Explore Our Work ↓
-          </a>
-
-          <a href="#contact" class="outline-btn">
-            Start a Project ↗
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- Animated Design Orb -->
-
-      <div class="hero-orbit">
-
-        <div class="orbit orbit-one"></div>
-
-        <div class="orbit orbit-two"></div>
-
-        <div class="orbit orbit-three"></div>
-
-        <div class="orbit-center">
-          iD
-        </div>
-
-
-        <div class="floating-card card-one">
-          BRANDING
-          <strong>01</strong>
-        </div>
-
-        <div class="floating-card card-two">
-          UI / UX
-          <strong>02</strong>
-        </div>
-
-        <div class="floating-card card-three">
-          MOTION
-          <strong>03</strong>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= MARQUEE ================= -->
-
-    <section class="marquee">
-
-      <div>
-
-        BRANDING ✦ UI/UX ✦ MOTION ✦ SOCIAL DESIGN ✦
-        BRANDING ✦ UI/UX ✦ MOTION ✦ SOCIAL DESIGN ✦
-        BRANDING ✦ UI/UX ✦ MOTION ✦ SOCIAL DESIGN ✦
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= WORK ================= -->
-
-    <section class="section" id="work">
-
-      <div class="section-heading reveal">
-
-        <div>
-
-          <span class="section-number">
-            01 / SELECTED WORK
-          </span>
-
-          <h2
-            data-en="Selected Work"
-            data-bn="নির্বাচিত কাজ">
-
-            Selected Work
-
-          </h2>
-
-        </div>
-
-
-        <p
-          data-en="A collection of visual identities, digital interfaces and campaign work."
-          data-bn="ভিজ্যুয়াল আইডেন্টিটি, ডিজিটাল ইন্টারফেস এবং ক্যাম্পেইন কাজের একটি সংগ্রহ।">
-
-          A collection of visual identities, digital interfaces and campaign work.
-
-        </p>
-
-      </div>
-
-
-      <div class="project-grid">
-
-
-        <!-- Project 01 -->
-
-        <article class="project project-large reveal">
-
-          <div class="project-art green-art">
-
-            <div class="project-logo">
-              iD
-            </div>
-
-            <div class="project-title">
-
-              iDraw
-              <br>
-
-              <span>Designs</span>
-
-            </div>
-
-            <div class="big-circle"></div>
-
-          </div>
-
-
-          <div class="project-info">
-
-            <div>
-
-              <small>01</small>
-
-              <h3>
-                iDraw Designs
-              </h3>
-
-            </div>
-
-            <p>
-              Brand Identity / Art Direction
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <!-- Project 02 -->
-
-        <article class="project reveal">
-
-          <div class="project-art blue-art">
-
-            <div class="blue-circle"></div>
-
-            <div class="blue-text">
-
-              DIGITAL
-              <br>
-              EXPERIENCE
-
-            </div>
-
-          </div>
-
-
-          <div class="project-info">
-
-            <div>
-
-              <small>02</small>
-
-              <h3>
-                Digital Identity
-              </h3>
-
-            </div>
-
-            <p>
-              UI/UX / Visual System
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <!-- Project 03 -->
-
-        <article class="project reveal">
-
-          <div class="project-art orange-art">
-
-            <div class="letter">
-              A
-            </div>
-
-            <div class="poster-text">
-
-              CREATE
-              <br>
-              WITHOUT
-              <br>
-              LIMITS.
-
-            </div>
-
-          </div>
-
-
-          <div class="project-info">
-
-            <div>
-
-              <small>03</small>
-
-              <h3>
-                Campaign Visual
-              </h3>
-
-            </div>
-
-            <p>
-              Poster / Social Campaign
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <!-- Project 04 -->
-
-        <article class="project project-wide reveal">
-
-          <div class="project-art black-art">
-
-            <div class="motion-title">
-
-              MOTION
-              <br>
-
-              <span>MAKES IT</span>
-
-              <br>
-
-              ALIVE.
-
-            </div>
-
-            <div class="scan-lines"></div>
-
-          </div>
-
-
-          <div class="project-info">
-
-            <div>
-
-              <small>04</small>
-
-              <h3>
-                Motion Direction
-              </h3>
-
-            </div>
-
-            <p>
-              Animation / Motion Graphics
-            </p>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= SERVICES ================= -->
-
-    <section class="services-section" id="services">
-
-      <div class="section">
-
-        <div class="section-heading reveal">
-
-          <div>
-
-            <span class="section-number">
-              02 / WHAT WE DO
-            </span>
-
-            <h2
-              data-en="Built to be seen."
-              data-bn="দেখানোর জন্যই তৈরি।">
-
-              Built to be seen.
-
-            </h2>
-
-          </div>
-
-        </div>
-
-
-        <div class="services-list">
-
-
-          <div class="service reveal">
-
-            <span>01</span>
-
-            <h3
-              data-en="Brand Identity"
-              data-bn="ব্র্যান্ড আইডেন্টিটি">
-
-              Brand Identity
-
-            </h3>
-
-            <p
-              data-en="Logo, typography, colors and complete visual language."
-              data-bn="লোগো, টাইপোগ্রাফি, কালার এবং সম্পূর্ণ ভিজ্যুয়াল ল্যাঙ্গুয়েজ।">
-
-              Logo, typography, colors and complete visual language.
-
-            </p>
-
-            <b>↗</b>
-
-          </div>
-
-
-          <div class="service reveal">
-
-            <span>02</span>
-
-            <h3
-              data-en="UI / UX Design"
-              data-bn="UI / UX ডিজাইন">
-
-              UI / UX Design
-
-            </h3>
-
-            <p
-              data-en="Modern web and mobile interfaces designed for people."
-              data-bn="মানুষের জন্য তৈরি আধুনিক ও সহজ ওয়েব এবং মোবাইল ইন্টারফেস।">
-
-              Modern web and mobile interfaces designed for people.
-
-            </p>
-
-            <b>↗</b>
-
-          </div>
-
-
-          <div class="service reveal">
-
-            <span>03</span>
-
-            <h3
-              data-en="Motion & Animation"
-              data-bn="মোশন ও অ্যানিমেশন">
-
-              Motion & Animation
-
-            </h3>
-
-            <p
-              data-en="Logo animation, motion graphics and social content."
-              data-bn="লোগো অ্যানিমেশন, মোশন গ্রাফিক্স এবং সোশ্যাল কনটেন্ট।">
-
-              Logo animation, motion graphics and social content.
-
-            </p>
-
-            <b>↗</b>
-
-          </div>
-
-
-          <div class="service reveal">
-
-            <span>04</span>
-
-            <h3
-              data-en="Social Design"
-              data-bn="সোশ্যাল ডিজাইন">
-
-              Social Design
-
-            </h3>
-
-            <p
-              data-en="Creative campaigns and content for digital platforms."
-              data-bn="ডিজিটাল প্ল্যাটফর্মের জন্য ক্রিয়েটিভ ক্যাম্পেইন ও কনটেন্ট।">
-
-              Creative campaigns and content for digital platforms.
-
-            </p>
-
-            <b>↗</b>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section class="statement" id="about">
-
-      <div class="statement-inner reveal">
-
-        <span class="section-number">
-          03 / OUR MINDSET
-        </span>
-
-        <h2
-          data-en="Good design gets attention. Great design gets remembered."
-          data-bn="ভালো ডিজাইন নজর কাড়ে। অসাধারণ ডিজাইন মনে থেকে যায়।">
-
-          Good design gets attention.
-          Great design gets remembered.
-
-        </h2>
-
-        <div class="signature">
-          iDraw®
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= PROCESS ================= -->
-
-    <section class="section">
-
-      <div class="section-heading reveal">
-
-        <div>
-
-          <span class="section-number">
-            04 / PROCESS
-          </span>
-
-          <h2
-            data-en="From thought to form."
-            data-bn="ভাবনা থেকে বাস্তব রূপ।">
-
-            From thought to form.
-
-          </h2>
-
-        </div>
-
-      </div>
-
-
-      <div class="process-grid">
-
-
-        <div class="process reveal">
-
-          <span>01</span>
-
-          <h3>
-            Discover
-          </h3>
-
-          <p>
-            We understand the brand, audience and problem.
-          </p>
-
-        </div>
-
-
-        <div class="process reveal">
-
-          <span>02</span>
-
-          <h3>
-            Define
-          </h3>
-
-          <p>
-            We shape the direction, mood and visual strategy.
-          </p>
-
-        </div>
-
-
-        <div class="process reveal">
-
-          <span>03</span>
-
-          <h3>
-            Design
-          </h3>
-
-          <p>
-            We turn strategy into a distinctive visual system.
-          </p>
-
-        </div>
-
-
-        <div class="process reveal">
-
-          <span>04</span>
-
-          <h3>
-            Deliver
-          </h3>
-
-          <p>
-            We polish everything and prepare it for launch.
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= CONTACT ================= -->
-
-    <section class="contact" id="contact">
-
-      <div class="contact-glow"></div>
-
-
-      <div class="contact-inner reveal">
-
-        <span class="section-number">
-          05 / LET'S CREATE
-        </span>
-
-
-        <h2>
-
-          Have an idea?
-
-          <br>
-
-          <em>Let's draw it.</em>
-
-        </h2>
-
-
-        <a
-          href="mailto:hello@idrawdesigns.com"
-          class="email">
-
-          hello@idrawdesigns.com ↗
-
-        </a>
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-  <!-- ================= FOOTER ================= -->
-
-  <footer>
-
-    <div class="footer-logo">
-
-      iDraw<span>Designs</span>
-
+    <div class="hero-art" aria-hidden="true">
+      <div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div>
+      <div class="core">iD</div>
+      <div class="orbit-tag tag-a">BRANDING<strong>01 / IDENTITY</strong></div>
+      <div class="orbit-tag tag-b">UI / UX<strong>02 / DIGITAL</strong></div>
+      <div class="orbit-tag tag-c">MOTION<strong>03 / MOVEMENT</strong></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker"><div>BRANDING ✦ GRAPHIC DESIGN ✦ UI/UX ✦ MOTION ✦ SOCIAL MEDIA ✦ BRANDING ✦ GRAPHIC DESIGN ✦ UI/UX ✦ MOTION ✦ SOCIAL MEDIA ✦</div></div>
+
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">01 / SELECTED WORK</div><h2 data-en="Creative Portfolio" data-bn="ক্রিয়েটিভ পোর্টফোলিও">Creative Portfolio</h2></div>
+      <p data-en="Explore our selected visual projects. Choose a category to find the work you need." data-bn="আমাদের নির্বাচিত ডিজাইন দেখুন। ক্যাটাগরি বেছে আপনার পছন্দের কাজ খুঁজুন।">Explore our selected visual projects. Choose a category to find the work you need.</p>
     </div>
 
-
-    <p>
-      © 2026 iDraw Designs. All rights reserved.
-    </p>
-
-
-    <div class="social">
-
-      <a href="#">Be</a>
-
-      <a href="#">Ig</a>
-
-      <a href="#">Fb</a>
-
+    <div class="filters" id="filters">
+      <button class="filter active" data-category="All">All Work</button>
+      <button class="filter" data-category="Branding">Branding</button>
+      <button class="filter" data-category="Graphic Design">Graphic Design</button>
+      <button class="filter" data-category="UI/UX">UI/UX</button>
+      <button class="filter" data-category="Motion">Motion</button>
     </div>
 
-  </footer>
+    <div class="projects" id="projectGrid"></div>
+    <p class="small" style="margin-top:22px" data-en="Demo projects are visual placeholders. Add your real work from the admin panel after connecting a backend." data-bn="এগুলো ডেমো প্রজেক্ট। আসল কাজ যোগ করতে অ্যাডমিন প্যানেল ব্যবহার করুন; স্থায়ী ব্যবস্থাপনার জন্য ব্যাকএন্ড যুক্ত করতে হবে।">Demo projects are visual placeholders. Add your real work from the admin panel after connecting a backend.</p>
+  </div>
+</section>
 
+<section class="services-section" id="services">
+  <div class="container section">
+    <div class="section-head"><div><div class="eyebrow">02 / WHAT WE DO</div><h2 data-en="Design with purpose." data-bn="উদ্দেশ্যপূর্ণ ডিজাইন।">Design with purpose.</h2></div></div>
+    <div class="service-list">
+      <div class="service-row"><span class="number">01</span><h3 data-en="Brand Identity" data-bn="ব্র্যান্ড আইডেন্টিটি">Brand Identity</h3><p data-en="Logos, visual systems, typography and brand guidelines." data-bn="লোগো, ভিজ্যুয়াল সিস্টেম, টাইপোগ্রাফি ও ব্র্যান্ড গাইডলাইন।">Logos, visual systems, typography and brand guidelines.</p><b>↗</b></div>
+      <div class="service-row"><span class="number">02</span><h3 data-en="Graphic Design" data-bn="গ্রাফিক ডিজাইন">Graphic Design</h3><p data-en="Posters, campaigns, advertising creatives and social media content." data-bn="পোস্টার, ক্যাম্পেইন, বিজ্ঞাপনের ডিজাইন ও সোশ্যাল মিডিয়া কনটেন্ট।">Posters, campaigns, advertising creatives and social media content.</p><b>↗</b></div>
+      <div class="service-row"><span class="number">03</span><h3>UI / UX</h3><p data-en="Web and mobile interfaces focused on clarity and usability." data-bn="সহজ ব্যবহার ও সুন্দর অভিজ্ঞতাকে গুরুত্ব দিয়ে ওয়েব এবং মোবাইল ইন্টারফেস।">Web and mobile interfaces focused on clarity and usability.</p><b>↗</b></div>
+      <div class="service-row"><span class="number">04</span><h3 data-en="Motion & Animation" data-bn="মোশন ও অ্যানিমেশন">Motion & Animation</h3><p data-en="Motion graphics, logo animation and short-form visual storytelling." data-bn="মোশন গ্রাফিক্স, লোগো অ্যানিমেশন ও ছোট ভিজ্যুয়াল স্টোরিটেলিং।">Motion graphics, logo animation and short-form visual storytelling.</p><b>↗</b></div>
+    </div>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<section class="statement" id="about">
+  <div class="container">
+    <div class="eyebrow">03 / OUR PHILOSOPHY</div>
+    <h2 data-en="Good design gets attention. Great design gets remembered." data-bn="ভালো ডিজাইন নজর কাড়ে। অসাধারণ ডিজাইন মনে থেকে যায়।">Good design gets attention. Great design gets remembered.</h2>
+    <p style="margin-top:25px;font-weight:700">iDraw® — Think. Create. Inspire.</p>
+  </div>
+</section>
 
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div><div class="eyebrow">04 / PROCESS</div><h2 data-en="From idea to impact." data-bn="ভাবনা থেকে বাস্তব ফলাফল।">From idea to impact.</h2></div></div>
+    <div class="process-grid">
+      <div class="process-card"><span>01</span><h3>Discover</h3><p>Understand your goals, audience and project requirements.</p></div>
+      <div class="process-card"><span>02</span><h3>Define</h3><p>Agree on direction, scope, timeline and creative strategy.</p></div>
+      <div class="process-card"><span>03</span><h3>Design</h3><p>Develop concepts, refine the details and collect feedback.</p></div>
+      <div class="process-card"><span>04</span><h3>Deliver</h3><p>Prepare final deliverables and project handover.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-panel" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="eyebrow">05 / LET'S WORK TOGETHER</div>
+      <h2 data-en="Have a project in mind?" data-bn="আপনার কি কোনো প্রজেক্ট আছে?">Have a project in mind?</h2>
+      <p data-en="Tell us what you're building. Share your requirements and we'll get back to you." data-bn="আপনার কাজের বিস্তারিত জানান। আপনার প্রয়োজন বুঝে যোগাযোগ করা হবে।">Tell us what you're building. Share your requirements and we'll get back to you.</p>
+      <p style="margin-top:20px"><a href="mailto:hello@idrawdesigns.com">hello@idrawdesigns.com ↗</a></p>
+      <p style="margin-top:12px"><a id="whatsappLink" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp ↗</a></p>
+      <p class="small" style="margin-top:20px">Update the email and WhatsApp details in the code before publishing.</p>
+    </div>
+
+    <form class="form-card" id="inquiryForm">
+      <h3 style="font:600 24px 'Space Grotesk';margin-bottom:20px" data-en="Project Inquiry" data-bn="প্রজেক্ট সম্পর্কে জানান">Project Inquiry</h3>
+      <label>Name *<input class="field" name="name" required maxlength="100" autocomplete="name" placeholder="Your name"></label>
+      <label>Email *<input class="field" name="email" type="email" required maxlength="150" autocomplete="email" placeholder="you@example.com"></label>
+      <label>Service
+        <select class="field" name="service">
+          <option>Branding</option><option>Graphic Design</option><option>UI/UX</option><option>Motion</option><option>Other</option>
+        </select>
+      </label>
+      <label>Budget / timeline (optional)<input class="field" name="budget" maxlength="100" placeholder="e.g. budget and deadline"></label>
+      <label>Project brief *<textarea class="field" name="brief" required maxlength="3000" placeholder="Tell us about your project..."></textarea></label>
+      <button class="btn btn-primary" type="submit" data-en="Prepare Inquiry ↗" data-bn="ইনকোয়ারি তৈরি করুন ↗">Prepare Inquiry ↗</button>
+      <p class="form-status" id="inquiryStatus" aria-live="polite"></p>
+      <p class="small" style="margin-top:10px">Demo: the form prepares an email. A backend is needed to save inquiries centrally.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <a class="brand" href="#home">iDraw<span>Designs</span></a>
+    <p>© 2026 iDraw Designs. All rights reserved.</p>
+    <div class="socials"><a href="#" aria-label="Instagram">Instagram</a><a href="#" aria-label="Behance">Behance</a><a href="#" aria-label="Facebook">Facebook</a></div>
+    <button class="text-btn" id="adminBtn">Studio Admin ↗</button>
+  </div>
+</footer>
+
+<!-- PROJECT PREVIEW -->
+<div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+  <div class="modal-box">
+    <div class="modal-head"><h2 id="projectModalTitle">Project</h2><button class="close-btn" data-close="projectModal">✕</button></div>
+    <div id="projectPreview"></div>
+  </div>
+</div>
+
+<!-- CLIENT PORTAL -->
+<div class="modal" id="clientModal" role="dialog" aria-modal="true" aria-labelledby="clientModalTitle">
+  <div class="modal-box">
+    <div class="modal-head"><h2 id="clientModalTitle">Client Portal</h2><button class="close-btn" data-close="clientModal">✕</button></div>
+    <div class="notice">Client accounts are not connected yet. This portal is a UI prototype only; it does not authenticate users or reveal private project data.</div>
+    <form id="clientForm">
+      <label>Email<input class="field" type="email" name="email" required placeholder="Your registered email"></label>
+      <label>Project reference (optional)<input class="field" name="reference" maxlength="80" placeholder="Project ID"></label>
+      <button class="btn btn-primary" type="submit">Request Client Access</button>
+      <p class="form-status" id="clientStatus" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<!-- ADMIN DEMO -->
+<div class="modal" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+  <div class="modal-box">
+    <div class="modal-head"><h2 id="adminTitle">Studio Admin</h2><button class="close-btn" data-close="adminModal">✕</button></div>
+    <div id="adminLogin">
+      <div class="notice"><strong>Frontend demo only.</strong> Do not use real passwords or sensitive client data here. This demo gate is not secure authentication.</div>
+      <form id="adminLoginForm">
+        <label>Demo username<input class="field" name="username" required autocomplete="off" placeholder="studio"></label>
+        <label>Demo password<input class="field" name="password" type="password" required autocomplete="off" placeholder="Enter demo password"></label>
+        <button class="btn btn-primary" type="submit">Open Demo Dashboard</button>
+        <p class="form-status" id="adminLoginStatus" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div id="adminDashboard" hidden>
+      <div class="notice">Demo dashboard: projects saved here are stored only in this browser. They are not shared with visitors on other devices. Images are not uploaded to a server.</div>
+      <div class="stats">
+        <div class="stat"><strong id="statProjects">0</strong><span>Projects</span></div>
+        <div class="stat"><strong id="statInquiries">0</strong><span>Inquiries on this device</span></div>
+        <div class="stat"><strong>Demo</strong><span>Storage mode</span></div>
+      </div>
+      <div class="admin-layout">
+        <div class="admin-sidebar">
+          <button class="admin-tab active" data-admin-tab="projects">Projects</button>
+          <button class="admin-tab" data-admin-tab="inquiries">Inquiries</button>
+          <button class="admin-tab" data-admin-tab="settings">Setup guide</button>
+        </div>
+        <div class="admin-content" id="adminContent"></div>
+      </div>
+      <div class="divider"></div>
+      <button class="btn btn-small" id="adminLogout">Close Demo Session</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+
+const $ = (selector, root=document) => root.querySelector(selector);
+const $$ = (selector, root=document) => [...root.querySelectorAll(selector)];
+
+const STORAGE = {
+  projects: "idraw_demo_projects_v1",
+  inquiries: "idraw_demo_inquiries_v1",
+  language: "idraw_demo_language_v1"
+};
+
+const defaults = [
+  {id:"p1",title:"iDraw Brand Identity",category:"Branding",description:"A bold visual identity concept for a creative studio.",art:"green",symbol:"iD",image:""},
+  {id:"p2",title:"Digital Experience",category:"UI/UX",description:"A modern interface concept focused on clarity and usability.",art:"blue",symbol:"UX",image:""},
+  {id:"p3",title:"Campaign Visual",category:"Graphic Design",description:"A high-energy campaign poster concept.",art:"orange",symbol:"CREATE",image:""},
+  {id:"p4",title:"Motion Experiments",category:"Motion",description:"A visual direction concept for motion and animation.",art:"purple",symbol:"MOVE",image:""}
+];
+
+function readStore(key, fallback){
+  try{
+    const value = localStorage.getItem(key);
+    return value ? JSON.parse(value) : fallback;
+  }catch(e){return fallback;}
+}
+function writeStore(key,value){
+  try{
+    localStorage.setItem(key,JSON.stringify(value));
+    return true;
+  }catch(e){
+    showToast("Browser storage is full or unavailable.");
+    return false;
+  }
+}
+
+let projects = readStore(STORAGE.projects, defaults);
+let inquiries = readStore(STORAGE.inquiries, []);
+let currentCategory = "All";
+let currentLanguage = readStore(STORAGE.language,"en");
+let toastTimer;
+
+function showToast(message){
+  const toast=$("#toast");
+  toast.textContent=message;
+  toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>toast.classList.remove("show"),3000);
+}
+
+function openModal(id){
+  const modal=document.getElementById(id);
+  if(modal) modal.classList.add("open");
+}
+function closeModal(id){
+  const modal=document.getElementById(id);
+  if(modal) modal.classList.remove("open");
+}
+
+$$("[data-close]").forEach(button=>{
+  button.addEventListener("click",()=>closeModal(button.dataset.close));
+});
+$$(".modal").forEach(modal=>{
+  modal.addEventListener("click",event=>{
+    if(event.target===modal) modal.classList.remove("open");
+  });
+});
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape") $$(".modal.open").forEach(modal=>modal.classList.remove("open"));
+});
+
+const artColors={green:"art-green",blue:"art-blue",orange:"art-orange",purple:"art-purple"};
+
+function renderProjects(){
+  const grid=$("#projectGrid");
+  const visible=projects.filter(p=>currentCategory==="All"||p.category===currentCategory);
+  grid.replaceChildren();
+
+  if(!visible.length){
+    grid.innerHTML='<div class="empty">No projects in this category yet.</div>';
+    return;
+  }
+
+  visible.forEach(project=>{
+    const card=document.createElement("article");
+    card.className="project";
+    card.tabIndex=0;
+    card.setAttribute("role","button");
+    card.setAttribute("aria-label","Preview "+project.title);
+
+    const image=document.createElement("div");
+    image.className="project-image";
+
+    if(project.image){
+      const img=document.createElement("img");
+      img.src=project.image;
+      img.alt=project.title;
+      img.loading="lazy";
+      img.onerror=()=>{img.remove();renderArt(image,project);};
+      image.append(img);
+    }else{
+      renderArt(image,project);
+    }
+
+    const meta=document.createElement("div");
+    meta.className="project-meta";
+    const info=document.createElement("div");
+    const title=document.createElement("h3");
+    title.textContent=project.title;
+    const desc=document.createElement("p");
+    desc.textContent=project.category+" · "+project.description;
+    info.append(title,desc);
+
+    const preview=document.createElement("button");
+    preview.className="text-btn";
+    preview.type="button";
+    preview.textContent="View ↗";
+    preview.addEventListener("click",event=>{
+      event.stopPropagation();
+      showProject(project.id);
+    });
+
+    meta.append(info,preview);
+    card.append(image,meta);
+    card.addEventListener("click",()=>showProject(project.id));
+    card.addEventListener("keydown",event=>{
+      if(event.key==="Enter"||event.key===" "){
+        event.preventDefault();
+        showProject(project.id);
+      }
+    });
+    grid.append(card);
+  });
+}
+
+function renderArt(container,project){
+  const art=document.createElement("div");
+  art.className="art-label "+(artColors[project.art]||"art-green");
+  const text=document.createElement("span");
+  text.textContent=project.symbol||"iD";
+  art.append(text);
+  container.append(art);
+}
+
+function showProject(id){
+  const project=projects.find(p=>p.id===id);
+  if(!project)return;
+  $("#projectModalTitle").textContent=project.title;
+  const preview=$("#projectPreview");
+  preview.replaceChildren();
+
+  if(project.image){
+    const img=document.createElement("img");
+    img.src=project.image;
+    img.alt=project.title;
+    img.style.cssText="width:100%;max-height:380px;object-fit:contain;border-radius:10px;background:#14251a";
+    preview.append(img);
+  }else{
+    renderArt(preview,project);
+    preview.firstChild.style.cssText="min-height:220px;display:grid;place-items:center;border-radius:10px;margin-bottom:20px";
+  }
+
+  const category=document.createElement("p");
+  category.className="eyebrow";
+  category.style.marginTop="20px";
+  category.textContent=project.category;
+
+  const description=document.createElement("p");
+  description.className="muted";
+  description.style.cssText="margin-top:12px;line-height:1.8";
+  description.textContent=project.description;
+
+  const link=document.createElement("a");
+  link.className="btn btn-primary";
+  link.style.marginTop="20px";
+  link.href="#contact";
+  link.textContent="Discuss a similar project ↗";
+  link.addEventListener("click",()=>closeModal("projectModal"));
+
+  preview.append(category,description,link);
+  openModal("projectModal");
+}
+
+$$(".filter").forEach(button=>{
+  button.addEventListener("click",()=>{
+    currentCategory=button.dataset.category;
+    $$(".filter").forEach(b=>b.classList.toggle("active",b===button));
+    renderProjects();
+  });
+});
+
+function applyLanguage(language){
+  currentLanguage=language;
+  document.documentElement.lang=language==="bn"?"bn":"en";
+
+  $$("[data-en][data-bn]").forEach(element=>{
+    element.textContent=element.dataset[language];
+  });
+
+  $("#langBtn").textContent=language==="en"?"বাংলা":"English";
+  writeStore(STORAGE.language,language);
+}
+$("#langBtn").addEventListener("click",()=>{
+  applyLanguage(currentLanguage==="en"?"bn":"en");
+});
+
+const savedLang=readStore(STORAGE.language,"en");
+applyLanguage(savedLang==="bn"?"bn":"en");
+
+$("#menuBtn").addEventListener("click",()=>{
+  const nav=$("#navLinks");
+  const open=nav.classList.toggle("open");
+  $("#menuBtn").setAttribute("aria-expanded",String(open));
+});
+$$('#navLinks a').forEach(link=>link.addEventListener("click",()=>$("#navLinks").classList.remove("open")));
+
+$("#inquiryForm").addEventListener("submit",event=>{
+  event.preventDefault();
+  const form=event.currentTarget;
+  const data=Object.fromEntries(new FormData(form).entries());
+  data.id="i"+Date.now();
+  data.createdAt=new Date().toISOString();
+  inquiries.push(data);
+  writeStore(STORAGE.inquiries,inquiries);
+  updateStats();
+
+  const subject=encodeURIComponent("Project Inquiry — "+data.service);
+  const body=encodeURIComponent(
+    "Name: "+data.name+"\nEmail: "+data.email+
+    "\nService: "+data.service+"\nBudget / timeline: "+data.budget+
+    "\n\nProject brief:\n"+data.brief
+  );
+
+  $("#inquiryStatus").textContent="Your email app will open. The inquiry is only stored in this browser demo.";
+  window.location.href="mailto:hello@idrawdesigns.com?subject="+subject+"&body="+body;
+  form.reset();
+});
+
+$("#clientBtn").addEventListener("click",()=>{
+  $("#clientStatus").textContent="";
+  openModal("clientModal");
+});
+$("#clientForm").addEventListener("submit",event=>{
+  event.preventDefault();
+  $("#clientStatus").textContent="Prototype only: client access is not connected. Please contact the studio directly.";
+});
+
+$("#adminBtn").addEventListener("click",()=>{
+  $("#adminLogin").hidden=false;
+  $("#adminDashboard").hidden=true;
+  $("#adminLoginStatus").textContent="";
+  $("#adminLoginForm").reset();
+  openModal("adminModal");
+});
+
+$("#adminLoginForm").addEventListener("submit",event=>{
+  event.preventDefault();
+  const data=new FormData(event.currentTarget);
+  const username=String(data.get("username")||"").trim();
+  const password=String(data.get("password")||"");
+
+  // DEMO GATE ONLY. Never use this for real authentication.
+  if(username==="studio"&&password==="demo123"){
+    $("#adminLogin").hidden=true;
+    $("#adminDashboard").hidden=false;
+    renderAdminTab("projects");
+    updateStats();
+  }else{
+    $("#adminLoginStatus").textContent="Demo credentials do not match.";
+  }
+});
+
+$("#adminLogout").addEventListener("click",()=>{
+  $("#adminDashboard").hidden=true;
+  $("#adminLogin").hidden=false;
+  closeModal("adminModal");
+});
+
+$$("[data-admin-tab]").forEach(button=>{
+  button.addEventListener("click",()=>{
+    $$(".admin-tab").forEach(tab=>tab.classList.toggle("active",tab===button));
+    renderAdminTab(button.dataset.adminTab);
+  });
+});
+
+function updateStats(){
+  $("#statProjects").textContent=projects.length;
+  $("#statInquiries").textContent=inquiries.length;
+}
+
+function make(tag,text,className){
+  const el=document.createElement(tag);
+  if(text!==undefined)el.textContent=text;
+  if(className)el.className=className;
+  return el;
+}
+
+function renderAdminTab(tab){
+  const content=$("#adminContent");
+  content.replaceChildren();
+
+  if(tab==="projects"){
+    content.append(make("h3","Manage Portfolio",""));
+    content.append(make("p","Changes are local to this browser only.","small"));
+
+    const form=document.createElement("form");
+    form.id="addProjectForm";
+    form.style.marginTop="20px";
+
+    const titleLabel=make("label","Project title");
+    const title=document.createElement("input");
+    title.className="field";title.name="title";title.required=true;title.maxLength=100;
+    titleLabel.append(title);
+
+    const catLabel=make("label","Category");
+    const category=document.createElement("select");
+    category.className="field";category.name="category";
+    ["Branding","Graphic Design","UI/UX","Motion"].forEach(value=>{
+      const option=make("option",value);option.value=value;category.append(option);
+    });
+    catLabel.append(category);
+
+    const descLabel=make("label","Description");
+    const desc=document.createElement("textarea");
+    desc.className="field";desc.name="description";desc.required=true;desc.maxLength=500;
+    descLabel.append(desc);
+
+    const imageLabel=make("label","Image URL (optional)");
+    const image=document.createElement("input");
+    image.className="field";image.name="image";image.type="url";image.placeholder="https://example.com/design.jpg";
+    imageLabel.append(image);
+
+    const note=make("p","Use a publicly accessible image URL. Do not enter private client URLs.","small");
+    const submit=make("button","Add Project","btn btn-primary");
+    submit.type="submit";
+
+    form.append(titleLabel,catLabel,descLabel,imageLabel,note,submit);
+    content.append(form);
+
+    const heading=make("h3","Existing Projects");
+    heading.style.marginTop="25px";
+    content.append(heading);
+
+    const list=make("div");
+    list.style.marginTop="10px";
+
+    projects.forEach(project=>{
+      const row=make("div");
+      row.style.cssText="padding:13px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center";
+      const info=make("div");
+      info.append(make("strong",project.title),make("p",project.category,"small"));
+      const remove=make("button","Delete","btn btn-small");
+      remove.type="button";
+      remove.addEventListener("click",()=>{
+        if(!confirm("Delete "+project.title+" from this browser demo?"))return;
+        projects=projects.filter(p=>p.id!==project.id);
+        if(writeStore(STORAGE.projects,projects)){
+          renderProjects();renderAdminTab("projects");updateStats();
+        }
+      });
+      row.append(info,remove);
+      list.append(row);
+    });
+    content.append(list);
+
+    form.addEventListener("submit",event=>{
+      event.preventDefault();
+      const data=new FormData(form);
+      const imageURL=String(data.get("image")||"").trim();
+      const project={
+        id:"p"+Date.now(),
+        title:String(data.get("title")).trim(),
+        category:String(data.get("category")),
+        description:String(data.get("description")).trim(),
+        image:imageURL,
+        art:"green",
+        symbol:"iD"
+      };
+      projects.unshift(project);
+      if(writeStore(STORAGE.projects,projects)){
+        renderProjects();updateStats();renderAdminTab("projects");
+        showToast("Project added in this browser demo.");
+      }
+    });
+  }
+
+  if(tab==="inquiries"){
+    content.append(make("h3","Inquiries"));
+    content.append(make("p","These are inquiries saved in this browser only.","small"));
+    if(!inquiries.length){
+      content.append(make("div","No local inquiries yet.","empty"));
+      return;
+    }
+
+    const wrap=make("div",undefined,"table-wrap");
+    const table=document.createElement("table");
+    const thead=document.createElement("thead");
+    const headrow=document.createElement("tr");
+    ["Name / Email","Service","Brief"].forEach(text=>headrow.append(make("th",text)));
+    thead.append(headrow);
+    const tbody=document.createElement("tbody");
+
+    inquiries.forEach(item=>{
+      const tr=document.createElement("tr");
+      const name=make("td");
+      name.append(make("strong",item.name),make("p",item.email,"small"));
+      tr.append(name,make("td",item.service),make("td",item.brief));
+      tbody.append(tr);
+    });
+
+    table.append(thead,tbody);
+    wrap.append(table);
+    content.append(wrap);
+  }
+
+  if(tab==="settings"){
+    content.append(make("h3","Production Setup"));
+    const steps=[
+      "1. Create a Firebase or Supabase project.",
+      "2. Enable real authentication and restrict admin access by server-side roles.",
+      "3. Create projects, profiles, inquiries and project_updates tables or collections.",
+      "4. Upload portfolio images to storage and save their public URLs.",
+      "5. Apply database security policies so clients only see their own projects.",
+      "6. Connect the website forms and dashboard to the backend.",
+      "7. Configure email notifications and password recovery.",
+      "8. Test permissions before using real client information."
+    ];
+    const list=document.createElement("ol");
+    list.style.cssText="padding-left:20px;line-height:2;color:var(--muted);font-size:12px;margin-top:15px";
+    steps.forEach(step=>list.append(make("li",step)));
+    content.append(list);
+    content.append(make("p","This static prototype does not implement these backend features.","notice"));
+  }
+}
+
+renderProjects();
+updateStats();
+
+})();
+</script>
 </body>
 </html>
