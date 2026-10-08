@@ -1515,3 +1515,27 @@ footer {
   }
 
 }
+
+@media (max-width: 900px) {
+  .desktop-nav.mobile-open {
+    display: flex;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 6vw;
+    background: #07150d;
+    border-bottom: 1px solid rgba(244, 247, 239, 0.12);
+  }
+
+  .desktop-nav.mobile-open a {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(244, 247, 239, 0.08);
+  }
+}
+
+html {
+  scroll-padding-top: 90px;
+}
