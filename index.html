@@ -1,224 +1,256 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#07150d">
+<meta name="description" content="iDraw Designs — Creative Design, Branding, Graphic Design and UI/UX Studio.">
 <title>iDraw Designs | Creative Studio</title>
-<meta name="description" content="iDraw Designs — Graphic Design, Branding, UI/UX and Creative Digital Experiences.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root{--bg:#07150d;--panel:#0e2115;--lime:#b3ed36;--white:#f4f7ef;--muted:#a5b2a7;--line:#26382b}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{background:var(--bg);color:var(--white);font-family:Inter,sans-serif;overflow-x:hidden}
-button,input,textarea,select{font:inherit}
-button,a{cursor:pointer}
-a{color:inherit;text-decoration:none}
-button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
-.container{width:min(1180px,90%);margin:auto}
-.muted,.small{color:var(--muted)}
-.small{font-size:12px;line-height:1.7}
-.eyebrow{font-size:11px;letter-spacing:2px;color:var(--lime);text-transform:uppercase}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 17px;border:1px solid var(--line);border-radius:30px;background:transparent;color:var(--white);font-size:12px;font-weight:700;transition:.25s}
-.btn:hover{transform:translateY(-2px);border-color:var(--lime)}
-.btn-primary{background:var(--lime);color:#10200b;border-color:var(--lime)}
-.btn-primary:hover{background:#d0ff75;color:#10200b}
-.btn-small{padding:8px 12px;font-size:11px}
-.field{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:#08180e;color:white;margin-top:7px}
-.field::placeholder{color:#75847a}
-label{display:block;font-size:12px;color:#c4cec6;margin-bottom:14px}
-textarea.field{resize:vertical;min-height:110px}
-.topbar{position:sticky;top:0;z-index:50;background:#07150df2;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:14px}
-.brand{display:flex;align-items:center;gap:10px;font:700 20px "Space Grotesk";white-space:nowrap}
-.brand-name span{color:var(--lime)}
-.brand-logo{width:42px;height:42px;flex-shrink:0;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#d7ff75,#8ecb20);color:#10200b;font:800 20px "Space Grotesk";box-shadow:0 0 22px #b3ed3633;border:1px solid #d7ff75}
-.nav-links{display:flex;align-items:center;gap:23px;font-size:12px;color:#d1d9d1}
-.nav-links a:hover{color:var(--lime)}
-.nav-actions{display:flex;gap:7px;align-items:center}
-.lang-btn,.menu-btn{padding:10px 12px;border:1px solid var(--line);border-radius:24px;color:white;background:transparent;font-size:12px}
-.menu-btn{display:none}
-.hero{min-height:660px;padding:90px 0;position:relative;display:flex;align-items:center;overflow:hidden}
-.hero:before{content:"";position:absolute;width:600px;height:600px;right:-150px;top:20px;background:radial-gradient(circle,#b3ed3626,transparent 67%);pointer-events:none}
-.grid-bg{position:absolute;inset:0;background-image:linear-gradient(#26382b55 1px,transparent 1px),linear-gradient(90deg,#26382b55 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(#000,transparent 90%);pointer-events:none}
-.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:35px}
-.hero h1{font:700 clamp(54px,7.5vw,100px)/.95 "Space Grotesk";letter-spacing:-5px;margin:23px 0}
-.hero h1 em{font-style:normal;color:var(--lime)}
-.hero-copy{max-width:540px;color:var(--muted);line-height:1.85;font-size:14px}
-.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.hero-art{aspect-ratio:1;max-width:450px;width:100%;justify-self:end;position:relative;display:grid;place-items:center}
-.ring{position:absolute;inset:5%;border:1px solid #b3ed3655;border-radius:50%;animation:spin 25s linear infinite}
-.ring.r2{inset:19%;border-style:dashed;animation-direction:reverse;animation-duration:18s}
-.ring.r3{inset:32%;border-color:#ffffff25}
-.core{width:120px;height:120px;border-radius:32px;background:var(--lime);color:#10200b;display:grid;place-items:center;font:800 42px "Space Grotesk";transform:rotate(-8deg);box-shadow:0 0 75px #b3ed3644;animation:bob 4s ease-in-out infinite}
-.orbit-tag{position:absolute;padding:12px;background:#102218;border:1px solid var(--line);font-size:10px;letter-spacing:1px;box-shadow:0 12px 30px #0005}
-.orbit-tag strong{display:block;color:var(--lime);margin-top:5px}
-.tag-a{top:14%;left:4%;transform:rotate(-6deg)}
-.tag-b{right:0;top:48%;transform:rotate(5deg)}
-.tag-c{bottom:8%;left:22%;transform:rotate(-4deg)}
-.ticker{overflow:hidden;border-block:1px solid var(--line);padding:17px 0;color:var(--lime);font:700 12px "Space Grotesk";letter-spacing:2px;white-space:nowrap}
-.ticker div{width:max-content;animation:marquee 28s linear infinite}
-.section{padding:95px 0}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:35px}
-.section-head h2{font:700 clamp(36px,5vw,64px)/1 "Space Grotesk";letter-spacing:-3px;margin-top:12px}
-.section-head p{max-width:390px;color:var(--muted);font-size:13px;line-height:1.8}
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
-.filter{border:1px solid var(--line);border-radius:30px;background:transparent;color:#cbd5cc;padding:10px 15px;font-size:12px}
-.filter.active,.filter:hover{background:var(--lime);color:#10200b;border-color:var(--lime)}
-.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px}
-.project{min-width:0;cursor:pointer;transition:transform .3s}
-.project:hover{transform:translateY(-5px)}
-.project-image{position:relative;aspect-ratio:1.25;overflow:hidden;display:grid;place-items:center;background:#17291c;border-radius:3px}
-.project-image img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.project:hover .project-image img{transform:scale(1.04)}
-.art-label{width:100%;height:100%;min-height:190px;display:grid;place-items:center;font:800 clamp(38px,7vw,90px)/.9 "Space Grotesk";letter-spacing:-4px;text-align:center}
-.art-label span{color:var(--lime)}
-.art-green{background:#91d915;color:#07150d}
-.art-green span{color:#07150d}
-.art-blue{background:#205ff0}
-.art-orange{background:#ff713d;color:#1b130d}
-.art-orange span{color:#1b130d}
-.art-purple{background:#6b4ce6}
-.project-meta{display:flex;justify-content:space-between;align-items:start;gap:12px;padding:15px 2px}
-.project-meta h3{font:600 19px "Space Grotesk"}
-.project-meta p{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.7}
-.text-btn{border:0;background:transparent;color:var(--lime);font-size:12px}
-.services-section{background:#0b1d11;border-block:1px solid var(--line)}
-.service-list{border-top:1px solid var(--line)}
-.service-row{display:grid;grid-template-columns:55px 1fr 1fr 25px;gap:20px;align-items:center;padding:26px 5px;border-bottom:1px solid var(--line)}
-.service-row .number{color:var(--lime);font-size:11px}
-.service-row h3{font:600 25px "Space Grotesk"}
-.service-row p{color:var(--muted);font-size:12px;line-height:1.7}
-.service-row b{color:var(--lime)}
-.statement{padding:105px 0;background:var(--lime);color:#0b1b0e}
-.statement h2{max-width:950px;font:700 clamp(43px,7vw,84px)/.98 "Space Grotesk";letter-spacing:-4px;margin-top:22px}
-.statement .eyebrow{color:#304c0a}
-.process-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:35px;border-top:1px solid var(--line)}
-.process-card{padding:25px 18px 20px 0;border-right:1px solid var(--line)}
-.process-card:not(:first-child){padding-left:18px}
-.process-card:last-child{border-right:0}
-.process-card span{color:var(--lime);font-size:11px}
-.process-card h3{font:600 23px "Space Grotesk";margin:28px 0 10px}
-.process-card p{font-size:12px;color:var(--muted);line-height:1.7}
-.contact-panel{padding:75px 0 95px;background:#0b2114}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
-.contact-grid h2{font:700 clamp(45px,6vw,75px)/.95 "Space Grotesk";letter-spacing:-4px;margin:20px 0}
-.contact-grid>div>p{color:var(--muted);font-size:13px;line-height:1.8;max-width:420px}
-.form-card{background:#0e2115;border:1px solid var(--line);border-radius:18px;padding:25px}
-.form-status{font-size:12px;color:var(--lime);margin-top:12px;line-height:1.6}
-footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:11px}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.socials{display:flex;gap:12px}
-.socials a:hover{color:var(--lime)}
-.modal{position:fixed;inset:0;z-index:1000;background:#000c;display:none;align-items:center;justify-content:center;padding:12px;overflow:auto;backdrop-filter:blur(7px)}
-.modal.open{display:flex}
-.modal-box{width:min(680px,100%);max-height:94dvh;overflow:auto;background:#0b1d11;border:1px solid var(--line);border-radius:18px;padding:24px;position:relative;box-shadow:0 20px 100px #0008}
-.modal-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:20px}
-.modal-head h2{font:600 25px "Space Grotesk"}
-.close-btn{border:1px solid var(--line);background:transparent;color:white;border-radius:8px;padding:7px 11px}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
-.full{grid-column:1/-1}
-.divider{height:1px;background:var(--line);margin:20px 0}
-.notice{background:#17291c;border:1px solid var(--line);padding:12px;border-radius:10px;color:var(--muted);font-size:12px;line-height:1.7;margin-bottom:18px}
-.admin-layout{display:grid;grid-template-columns:145px minmax(0,1fr);gap:16px}
-.admin-sidebar{display:flex;flex-direction:column;gap:7px}
-.admin-tab{padding:12px;text-align:left;background:transparent;border:1px solid transparent;border-radius:9px;color:var(--muted);font-size:12px}
-.admin-tab.active,.admin-tab:hover{background:#1b3020;color:var(--lime);border-color:var(--line)}
-.admin-content{min-width:0;overflow-wrap:anywhere}
-.admin-content h3{font:600 19px "Space Grotesk";margin-bottom:7px}
-.admin-content .field{margin-bottom:2px}
-.admin-content .small{margin-bottom:12px}
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:15px 0}
-.stat{padding:13px;background:#12271a;border:1px solid var(--line);border-radius:12px;min-width:0}
-.stat strong{display:block;font:700 27px "Space Grotesk";color:var(--lime)}
-.stat span{font-size:10px;color:var(--muted);line-height:1.5;display:block}
-.table-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:12px}
-th,td{text-align:left;padding:12px 8px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
-th{color:var(--lime);font-weight:600}
-.empty{padding:25px;text-align:center;color:var(--muted);font-size:12px}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:1200;background:var(--lime);color:#10200b;padding:12px 18px;border-radius:30px;font-size:12px;font-weight:700;display:none;max-width:90%;text-align:center}
-.toast.show{display:block}
-#adminLogin{animation:fadeUp .45s ease both}
-#adminLogin .notice{background:linear-gradient(135deg,#17291c,#0e2115)}
-#adminLoginForm{padding:4px 0}
-#adminLoginForm .field{transition:border-color .2s,box-shadow .2s}
-#adminLoginForm .field:focus{border-color:var(--lime);box-shadow:0 0 0 3px #b3ed361b;outline:0}
-#adminLoginForm .btn{width:100%;margin-top:4px}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes bob{50%{transform:translateY(-10px) rotate(4deg)}}
-@keyframes marquee{to{transform:translateX(-50%)}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:850px){
-.nav-links{display:none;position:absolute;top:76px;left:0;right:0;padding:18px 6%;background:#07150d;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:20px}
-.nav-links.open{display:flex}
-.menu-btn{display:block}
-.hero-inner{grid-template-columns:1fr}
-.hero{padding:75px 0 55px}
-.hero-art{width:min(390px,90%);justify-self:center;grid-row:1}
-.hero-content{grid-row:2}
-.hero h1{font-size:clamp(55px,12vw,88px)}
-.service-row{grid-template-columns:35px 1fr 25px}
-.service-row p{grid-column:2}
-.service-row b{grid-column:3;grid-row:1}
-.process-grid{grid-template-columns:1fr 1fr}
-.process-card:nth-child(2){border-right:0}
-.process-card{border-bottom:1px solid var(--line);padding:20px 12px 20px 0}
-.process-card:not(:first-child){padding-left:12px}
-.contact-grid{grid-template-columns:1fr}
+/* Bornomala font: place your licensed font file at fonts/Bornomala.ttf */
+@font-face {
+  font-family: Bornomala;
+  src: url("fonts/Bornomala.ttf") format("truetype");
+  font-display: swap;
 }
-@media(max-width:600px){
-.container{width:90%}
-.nav{gap:7px}
-.brand{font-size:16px;gap:7px}
-.brand-logo{width:35px;height:35px;font-size:17px}
-.nav-actions{gap:5px}
-.lang-btn{padding:9px 8px}
-#clientBtn{padding:9px 10px;font-size:10px}
-.hero{min-height:auto;padding:55px 0 48px}
-.hero h1{letter-spacing:-3px}
-.hero-copy{font-size:13px}
-.hero-art{width:min(310px,92%)}
-.core{width:90px;height:90px;border-radius:25px;font-size:32px}
-.orbit-tag{padding:8px;font-size:8px}
-.section{padding:72px 0}
-.section-head{display:block}
-.section-head p{margin-top:15px}
-.section-head h2{letter-spacing:-2px}
-.projects{grid-template-columns:1fr;gap:18px}
-.project-image{aspect-ratio:1.2}
-.project-meta h3{font-size:17px}
-.service-row{gap:12px}
-.service-row h3{font-size:19px}
-.statement{padding:72px 0}
-.statement h2{letter-spacing:-2px}
-.process-grid{grid-template-columns:1fr}
-.process-card,.process-card:not(:first-child){padding:20px 0;border-right:0}
-.form-grid{grid-template-columns:1fr}
-.full{grid-column:auto}
-.modal{padding:8px}
-.modal-box{padding:15px;border-radius:15px;max-height:94dvh;width:100%}
-.modal-head h2{font-size:22px}
-#adminModal .modal-box{width:100%;max-width:none;padding:15px}
-#adminDashboard .admin-layout{grid-template-columns:1fr;gap:13px}
-#adminDashboard .admin-sidebar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
-#adminDashboard .admin-tab{padding:10px 3px;font-size:10px;text-align:center}
-#adminDashboard .stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
-#adminDashboard .stat{padding:9px 6px}
-#adminDashboard .stat strong{font-size:19px}
-#adminDashboard .stat span{font-size:9px}
-#adminDashboard .admin-content .field{width:100%}
-#adminDashboard .admin-content .btn{max-width:100%}
-#adminDashboard .admin-content h3{font-size:18px}
-#adminLogin .notice{font-size:11px}
-.footer-inner{align-items:flex-start}
+:root {
+  --bg:#07150d;
+  --panel:#0e2115;
+  --panel2:#12291a;
+  --lime:#b3ed36;
+  --white:#f4f7ef;
+  --muted:#a5b2a7;
+  --line:#293c2e;
+  --pink:#ff76ae;
 }
-@media(prefers-reduced-motion:reduce){
-*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth;scroll-padding-top:90px}
+body {
+  background:var(--bg);color:var(--white);
+  font-family:Inter,"Noto Sans Bengali",sans-serif;
+  overflow-x:hidden;
+}
+body.bn, body.bn button, body.bn input, body.bn textarea, body.bn select,
+body.bn h1, body.bn h2, body.bn h3, body.bn p, body.bn a, body.bn label {
+  font-family:Bornomala,"Noto Sans Bengali",sans-serif;
+}
+a {color:inherit;text-decoration:none}
+button,input,textarea,select {font:inherit}
+button {cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible {
+  outline:2px solid var(--lime);outline-offset:3px
+}
+img {max-width:100%}
+.container {width:min(1160px,90%);margin:auto}
+.muted {color:var(--muted)}
+.small {font-size:12px;color:var(--muted);line-height:1.8}
+.eyebrow {font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--lime)}
+.btn {
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  border:1px solid var(--line);border-radius:40px;padding:13px 19px;
+  color:var(--white);background:transparent;font-weight:600;
+  transition:transform .25s,border-color .25s,background .25s
+}
+.btn:hover {transform:translateY(-3px);border-color:var(--lime)}
+.btn-primary {background:var(--lime);color:#10200b;border-color:var(--lime)}
+.btn-primary:hover {background:#d0ff75;color:#10200b}
+.btn-small {padding:9px 13px;font-size:12px}
+.field {
+  display:block;width:100%;padding:13px 14px;margin-top:8px;
+  border:1px solid var(--line);border-radius:11px;
+  background:#08180e;color:white
+}
+.field:focus {border-color:var(--lime);outline:none;box-shadow:0 0 0 3px #b3ed361c}
+.field::placeholder {color:#7d8c80}
+label {display:block;font-size:12px;color:#c4cec6;margin-bottom:15px}
+textarea.field {resize:vertical;min-height:110px}
+.topbar {
+  position:sticky;top:0;z-index:50;background:#07150df0;
+  backdrop-filter:blur(18px);border-bottom:1px solid var(--line)
+}
+.nav {height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand {display:flex;align-items:center;gap:11px;font:700 20px "Space Grotesk";white-space:nowrap}
+.brand-name {color:var(--white)}
+.brand-name span {color:var(--lime)}
+.brand-logo {
+  width:42px;height:42px;min-width:42px;object-fit:contain;
+  border-radius:11px;background:var(--lime);padding:3px;
+}
+.nav-links {display:flex;align-items:center;gap:24px;font-size:12px;color:#d1d9d1}
+.nav-links a:hover {color:var(--lime)}
+.nav-actions {display:flex;align-items:center;gap:8px}
+.lang-btn,.menu-btn {
+  padding:10px 12px;border:1px solid var(--line);border-radius:25px;
+  background:transparent;color:white
+}
+.menu-btn {display:none}
+.hero {position:relative;min-height:650px;display:flex;align-items:center;padding:90px 0;overflow:hidden}
+.grid-bg {
+  position:absolute;inset:0;opacity:.5;
+  background-image:linear-gradient(#293c2e50 1px,transparent 1px),linear-gradient(90deg,#293c2e50 1px,transparent 1px);
+  background-size:55px 55px;mask-image:linear-gradient(#000,transparent 90%)
+}
+.hero:before {
+  content:"";position:absolute;width:600px;height:600px;right:-180px;top:20px;
+  background:radial-gradient(circle,#b3ed3627,transparent 68%)
+}
+.hero-inner {position:relative;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:45px}
+.hero h1 {
+  font:700 clamp(52px,7.2vw,91px)/.98 "Space Grotesk";
+  letter-spacing:-4px;margin:23px 0
+}
+.hero h1 em {font-style:normal;color:var(--lime)}
+.hero-copy {max-width:540px;color:var(--muted);font-size:15px;line-height:1.9}
+.hero-buttons {display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-art {width:100%;max-width:460px;aspect-ratio:1;justify-self:end;position:relative;display:grid;place-items:center}
+.ring {position:absolute;inset:5%;border:1px solid #b3ed3655;border-radius:50%;animation:spin 28s linear infinite}
+.ring.r2 {inset:20%;border-style:dashed;animation-direction:reverse;animation-duration:20s}
+.ring.r3 {inset:34%;border-color:#ffffff25}
+.core {
+  width:125px;height:125px;border-radius:34px;background:var(--lime);color:#10200b;
+  display:grid;place-items:center;font:800 42px "Space Grotesk";transform:rotate(-8deg);
+  box-shadow:0 0 80px #b3ed3640;animation:bob 4s ease-in-out infinite
+}
+.orbit-tag {position:absolute;padding:12px;background:#102218;border:1px solid var(--line);font-size:10px;letter-spacing:1px;box-shadow:0 12px 30px #0005}
+.orbit-tag strong {display:block;color:var(--lime);margin-top:5px}
+.tag-a {top:13%;left:2%;transform:rotate(-6deg)}
+.tag-b {right:0;top:48%;transform:rotate(5deg)}
+.tag-c {bottom:7%;left:21%;transform:rotate(-4deg)}
+.ticker {overflow:hidden;border-block:1px solid var(--line);padding:17px 0;color:var(--lime);font:700 12px "Space Grotesk";letter-spacing:2px;white-space:nowrap}
+.ticker div {width:max-content;animation:marquee 28s linear infinite}
+.section {padding:95px 0}
+.section-head {display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:35px}
+.section-head h2 {font:700 clamp(34px,5vw,60px)/1.1 "Space Grotesk";letter-spacing:-2px;margin-top:12px}
+.section-head>p {max-width:410px;color:var(--muted);font-size:13px;line-height:1.9}
+.filters {display:flex;flex-wrap:wrap;gap:8px;margin-bottom:25px}
+.filter {border:1px solid var(--line);border-radius:30px;background:transparent;color:#cbd5cc;padding:10px 15px;font-size:12px}
+.filter.active,.filter:hover {background:var(--lime);color:#10200b;border-color:var(--lime)}
+.projects {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+.project {min-width:0;cursor:pointer;transition:transform .3s}
+.project:hover {transform:translateY(-5px)}
+.project-image {position:relative;aspect-ratio:1.3;overflow:hidden;display:grid;place-items:center;background:#17291c;border-radius:12px}
+.project-image img {width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.project:hover .project-image img {transform:scale(1.05)}
+.art-label {width:100%;height:100%;min-height:210px;display:grid;place-items:center;font:800 clamp(40px,7vw,84px)/.9 "Space Grotesk";letter-spacing:-4px;text-align:center}
+.art-label span {color:var(--lime)}
+.art-green {background:#91d915;color:#07150d}
+.art-green span {color:#07150d}
+.art-blue {background:#205ff0}
+.art-orange {background:#ff713d;color:#1b130d}
+.art-orange span {color:#1b130d}
+.art-purple {background:#6b4ce6}
+.project-meta {display:flex;justify-content:space-between;align-items:start;gap:12px;padding:16px 2px}
+.project-meta h3 {font:600 19px "Space Grotesk"}
+.project-meta p {font-size:11px;color:var(--muted);margin-top:6px;line-height:1.7}
+.text-btn {border:0;background:transparent;color:var(--lime);font-size:12px}
+.services-section {background:#0b1d11;border-block:1px solid var(--line)}
+.service-list {border-top:1px solid var(--line)}
+.service-row {display:grid;grid-template-columns:50px 1fr 1fr 25px;gap:20px;align-items:center;padding:26px 5px;border-bottom:1px solid var(--line)}
+.service-row .number {color:var(--lime);font-size:11px}
+.service-row h3 {font:600 24px "Space Grotesk"}
+.service-row p {color:var(--muted);font-size:12px;line-height:1.8}
+.service-row b {color:var(--lime)}
+.statement {padding:100px 0;background:var(--lime);color:#0b1b0e}
+.statement .eyebrow {color:#304c0a}
+.statement h2 {max-width:960px;font:700 clamp(40px,7vw,82px)/1.04 "Space Grotesk";letter-spacing:-3px;margin-top:22px}
+.process-grid {display:grid;grid-template-columns:repeat(4,1fr);margin-top:35px;border-top:1px solid var(--line)}
+.process-card {padding:25px 18px 20px 0;border-right:1px solid var(--line)}
+.process-card:not(:first-child) {padding-left:18px}
+.process-card:last-child {border-right:0}
+.process-card span {color:var(--lime);font-size:11px}
+.process-card h3 {font:600 23px "Space Grotesk";margin:28px 0 10px}
+.process-card p {font-size:12px;color:var(--muted);line-height:1.8}
+.contact-panel {padding:80px 0 95px;background:#0b2114}
+.contact-grid {display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.contact-grid h2 {font:700 clamp(43px,6vw,72px)/1 "Space Grotesk";letter-spacing:-3px;margin:20px 0}
+.contact-grid>div>p {color:var(--muted);font-size:13px;line-height:1.9;max-width:430px}
+.form-card,.panel-card {background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:25px}
+.form-status {font-size:12px;color:var(--lime);margin-top:12px;line-height:1.8}
+footer {border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:11px}
+.footer-inner {display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.socials {display:flex;gap:12px}
+.socials a:hover {color:var(--lime)}
+.modal {position:fixed;inset:0;z-index:1000;background:#000c;display:none;align-items:center;justify-content:center;padding:18px;overflow:auto;backdrop-filter:blur(8px)}
+.modal.open {display:flex;animation:fadein .2s}
+.modal-box {width:min(700px,100%);max-height:90vh;overflow:auto;background:#0b1d11;border:1px solid var(--line);border-radius:20px;padding:25px;position:relative;box-shadow:0 25px 100px #0008}
+.modal-head {display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:22px}
+.modal-head h2 {font:600 25px "Space Grotesk"}
+.close-btn {border:1px solid var(--line);background:transparent;color:white;border-radius:8px;padding:7px 11px}
+.notice {background:#17291c;border:1px solid var(--line);padding:13px;border-radius:11px;color:var(--muted);font-size:12px;line-height:1.8;margin-bottom:18px}
+.admin-layout {display:grid;grid-template-columns:170px 1fr;gap:20px}
+.admin-sidebar {display:flex;flex-direction:column;gap:8px}
+.admin-tab {padding:12px;text-align:left;background:transparent;border:1px solid transparent;border-radius:9px;color:var(--muted)}
+.admin-tab.active,.admin-tab:hover {background:#1b3020;color:var(--lime);border-color:var(--line)}
+.admin-content {min-width:0}
+.stats {display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:15px 0}
+.stat {padding:15px;background:#12271a;border:1px solid var(--line);border-radius:12px}
+.stat strong {display:block;font:700 25px "Space Grotesk";color:var(--lime)}
+.stat span {font-size:11px;color:var(--muted)}
+.table-wrap {overflow-x:auto}
+table {width:100%;border-collapse:collapse;font-size:12px}
+th,td {text-align:left;padding:12px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th {color:var(--lime);font-weight:600}
+.empty {padding:25px;text-align:center;color:var(--muted);font-size:12px}
+.toast {position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:1200;background:var(--lime);color:#10200b;padding:12px 18px;border-radius:30px;font-size:12px;font-weight:700;display:none;max-width:90%;text-align:center}
+.toast.show {display:block}
+[hidden] {display:none!important}
+@keyframes spin {to{transform:rotate(360deg)}}
+@keyframes bob {50%{transform:translateY(-10px) rotate(4deg)}}
+@keyframes marquee {to{transform:translateX(-50%)}}
+@keyframes fadein {from{opacity:0}to{opacity:1}}
+@media(max-width:850px) {
+  .nav-links {display:none;position:absolute;top:76px;left:0;right:0;padding:20px 5%;background:#07150d;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:20px}
+  .nav-links.open {display:flex}
+  .menu-btn {display:block}
+  .hero {padding:65px 0}
+  .hero-inner {grid-template-columns:1fr}
+  .hero-art {width:min(380px,90%);justify-self:center;grid-row:1}
+  .hero-content {grid-row:2}
+  .hero h1 {font-size:clamp(52px,11vw,82px)}
+  .service-row {grid-template-columns:35px 1fr 25px}
+  .service-row p {grid-column:2}
+  .service-row b {grid-column:3;grid-row:1}
+  .process-grid {grid-template-columns:1fr 1fr}
+  .process-card:nth-child(2) {border-right:0}
+  .process-card {border-bottom:1px solid var(--line);padding:20px 12px 20px 0}
+  .process-card:not(:first-child) {padding-left:12px}
+  .contact-grid {grid-template-columns:1fr}
+  .admin-layout {grid-template-columns:1fr}
+  .admin-sidebar {flex-direction:row;flex-wrap:wrap}
+  .admin-tab {flex:1}
+}
+@media(max-width:520px) {
+  .container {width:90%}
+  .brand {font-size:16px}
+  .brand-logo {width:36px;height:36px;min-width:36px}
+  .nav {gap:8px}
+  .nav-actions {gap:5px}
+  #clientBtn {padding:8px 10px;font-size:11px}
+  .lang-btn {padding:8px}
+  .hero h1 {letter-spacing:-2px}
+  .hero-copy {font-size:13px}
+  .section {padding:70px 0}
+  .section-head {display:block}
+  .section-head>p {margin-top:15px}
+  .projects {grid-template-columns:1fr}
+  .project-image {aspect-ratio:1.2}
+  .project-meta {flex-wrap:wrap}
+  .service-row h3 {font-size:19px}
+  .statement {padding:70px 0}
+  .statement h2 {letter-spacing:-2px}
+  .process-grid {grid-template-columns:1fr}
+  .process-card,.process-card:not(:first-child) {padding:20px 0;border-right:0}
+  .form-grid {grid-template-columns:1fr}
+  .modal-box {padding:18px}
+  .stats {grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 </style>
 </head>
@@ -227,19 +259,24 @@ th{color:var(--lime);font-weight:600}
 <header class="topbar">
   <div class="container nav">
     <a class="brand" href="#home" aria-label="iDraw Designs home">
-      <span class="brand-logo">iD</span>
-      <span class="brand-name">iDraw<span>Designs</span></span>
+      <img class="brand-logo" src="assets/logo-mark.jpg" alt="iDraw Designs logo"
+        onerror="this.style.display='none';document.getElementById('logoFallback').style.display='grid'">
+      <span class="brand-logo" id="logoFallback" style="display:none;color:#10200b;font-weight:800;place-items:center">iD</span>
+      <span class="brand-name">iDraw<span> Designs</span></span>
     </a>
+
     <nav class="nav-links" id="navLinks">
       <a href="#work" data-en="Portfolio" data-bn="পোর্টফোলিও">Portfolio</a>
-      <a href="#services" data-en="Services" data-bn="সেবা">Services</a>
-      <a href="#about" data-en="About" data-bn="পরিচিতি">About</a>
+      <a href="#services" data-en="Services" data-bn="সেবাসমূহ">Services</a>
+      <a href="#about" data-en="About Us" data-bn="আমাদের সম্পর্কে">About Us</a>
+      <a href="#process" data-en="Our Process" data-bn="কাজের ধাপ">Our Process</a>
       <a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
     </nav>
+
     <div class="nav-actions">
-      <button class="lang-btn" id="langBtn">বাংলা</button>
+      <button class="lang-btn" id="langBtn">English</button>
       <button class="btn btn-small" id="clientBtn" data-en="Client Portal" data-bn="ক্লায়েন্ট পোর্টাল">Client Portal</button>
-      <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
     </div>
   </div>
 </header>
@@ -250,14 +287,15 @@ th{color:var(--lime);font-weight:600}
   <div class="container hero-inner">
     <div class="hero-content">
       <div class="eyebrow" data-en="Independent Creative Studio" data-bn="স্বাধীন ক্রিয়েটিভ স্টুডিও">Independent Creative Studio</div>
-      <h1>Ideas, drawn<br><em>differently.</em></h1>
-      <p class="hero-copy" data-en="We create bold visual identities, digital products and meaningful experiences for ambitious brands." data-bn="আমরা তৈরি করি স্বতন্ত্র ভিজ্যুয়াল আইডেন্টিটি, ডিজিটাল প্রোডাক্ট এবং আধুনিক ব্র্যান্ডের জন্য অর্থবহ অভিজ্ঞতা।">We create bold visual identities, digital products and meaningful experiences for ambitious brands.</p>
+      <h1 data-en="Ideas, drawn differently." data-bn="ভাবনা আঁকি, ভিন্নভাবে।">Ideas, drawn<br><em>differently.</em></h1>
+      <p class="hero-copy" data-en="We help businesses stand out with memorable branding, powerful graphic design and easy-to-use digital experiences." data-bn="আপনার ব্যবসাকে অন্যদের থেকে আলাদা করে তুলতে আমরা তৈরি করি আকর্ষণীয় ব্র্যান্ডিং, মানসম্মত গ্রাফিক ডিজাইন এবং সহজ ডিজিটাল অভিজ্ঞতা।">We help businesses stand out with memorable branding, powerful graphic design and easy-to-use digital experiences.</p>
       <div class="hero-buttons">
-        <a class="btn btn-primary" href="#work" data-en="Explore Portfolio ↓" data-bn="পোর্টফোলিও দেখুন ↓">Explore Portfolio ↓</a>
-        <a class="btn" href="#contact" data-en="Start a Project ↗" data-bn="প্রজেক্ট শুরু করুন ↗">Start a Project ↗</a>
+        <a class="btn btn-primary" href="#work" data-en="Explore Our Work ↓" data-bn="আমাদের কাজ দেখুন ↓">Explore Our Work ↓</a>
+        <a class="btn" href="#contact" data-en="Start Your Project ↗" data-bn="আপনার কাজ শুরু করুন ↗">Start Your Project ↗</a>
       </div>
-      <p class="small" style="margin-top:25px">GRAPHIC DESIGN · BRANDING · UI/UX · MOTION</p>
+      <p class="small" style="margin-top:25px">BRANDING · GRAPHIC DESIGN · UI/UX · MOTION</p>
     </div>
+
     <div class="hero-art" aria-hidden="true">
       <div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div>
       <div class="core">iD</div>
@@ -273,8 +311,8 @@ th{color:var(--lime);font-weight:600}
 <section class="section" id="work">
   <div class="container">
     <div class="section-head">
-      <div><div class="eyebrow">01 / SELECTED WORK</div><h2 data-en="Creative Portfolio" data-bn="ক্রিয়েটিভ পোর্টফোলিও">Creative Portfolio</h2></div>
-      <p data-en="Explore our selected visual projects. Choose a category to find the work you need." data-bn="আমাদের নির্বাচিত ডিজাইন দেখুন। ক্যাটাগরি বেছে আপনার পছন্দের কাজ খুঁজুন।">Explore our selected visual projects. Choose a category to find the work you need.</p>
+      <div><div class="eyebrow">01 / SELECTED WORK</div><h2 data-en="Creative Portfolio" data-bn="আমাদের ডিজাইন">Creative Portfolio</h2></div>
+      <p data-en="Browse our design concepts by category. Each project demonstrates a different creative direction." data-bn="বিভিন্ন ক্যাটাগরিতে আমাদের ডিজাইন দেখুন। প্রতিটি কাজ তুলে ধরে আলাদা সৃজনশীল ভাবনা।">Browse our design concepts by category. Each project demonstrates a different creative direction.</p>
     </div>
     <div class="filters" id="filters">
       <button class="filter active" data-category="All">All Work</button>
@@ -284,18 +322,21 @@ th{color:var(--lime);font-weight:600}
       <button class="filter" data-category="Motion">Motion</button>
     </div>
     <div class="projects" id="projectGrid"></div>
-    <p class="small" style="margin-top:22px" data-en="Demo projects are visual placeholders. Add your real work from the admin panel." data-bn="এগুলো ডেমো প্রজেক্ট। অ্যাডমিন প্যানেল থেকে নিজের কাজ যোগ করুন।">Demo projects are visual placeholders. Add your real work from the admin panel.</p>
+    <p class="small" style="margin-top:22px" data-en="These are sample concepts. Replace them with your actual client-approved work before launch." data-bn="এগুলো নমুনা ডিজাইন। ওয়েবসাইট প্রকাশের আগে নিজের বাস্তব ও অনুমোদিত কাজ যোগ করুন।">These are sample concepts. Replace them with your actual client-approved work before launch.</p>
   </div>
 </section>
 
 <section class="services-section" id="services">
   <div class="container section">
-    <div class="section-head"><div><div class="eyebrow">02 / WHAT WE DO</div><h2 data-en="Design with purpose." data-bn="উদ্দেশ্যপূর্ণ ডিজাইন।">Design with purpose.</h2></div></div>
+    <div class="section-head">
+      <div><div class="eyebrow">02 / WHAT WE DO</div><h2 data-en="Design that works for you." data-bn="আপনার ব্যবসার জন্য কার্যকর ডিজাইন।">Design that works for you.</h2></div>
+      <p data-en="Clear services, thoughtful design and a professional process from the first idea to final delivery." data-bn="প্রথম ভাবনা থেকে চূড়ান্ত ডেলিভারি পর্যন্ত—পরিষ্কার সেবা, যত্নশীল ডিজাইন এবং পেশাদার কাজের প্রক্রিয়া।">Clear services, thoughtful design and a professional process from the first idea to final delivery.</p>
+    </div>
     <div class="service-list">
-      <div class="service-row"><span class="number">01</span><h3 data-en="Brand Identity" data-bn="ব্র্যান্ড আইডেন্টিটি">Brand Identity</h3><p data-en="Logos, visual systems, typography and brand guidelines." data-bn="লোগো, ভিজ্যুয়াল সিস্টেম, টাইপোগ্রাফি ও ব্র্যান্ড গাইডলাইন।">Logos, visual systems, typography and brand guidelines.</p><b>↗</b></div>
-      <div class="service-row"><span class="number">02</span><h3 data-en="Graphic Design" data-bn="গ্রাফিক ডিজাইন">Graphic Design</h3><p data-en="Posters, campaigns, advertising creatives and social media content." data-bn="পোস্টার, ক্যাম্পেইন, বিজ্ঞাপনের ডিজাইন ও সোশ্যাল মিডিয়া কনটেন্ট।">Posters, campaigns, advertising creatives and social media content.</p><b>↗</b></div>
-      <div class="service-row"><span class="number">03</span><h3>UI / UX</h3><p data-en="Web and mobile interfaces focused on clarity and usability." data-bn="সহজ ব্যবহার ও সুন্দর অভিজ্ঞতাকে গুরুত্ব দিয়ে ওয়েব এবং মোবাইল ইন্টারফেস।">Web and mobile interfaces focused on clarity and usability.</p><b>↗</b></div>
-      <div class="service-row"><span class="number">04</span><h3 data-en="Motion & Animation" data-bn="মোশন ও অ্যানিমেশন">Motion & Animation</h3><p data-en="Motion graphics, logo animation and short-form visual storytelling." data-bn="মোশন গ্রাফিক্স, লোগো অ্যানিমেশন ও ছোট ভিজ্যুয়াল স্টোরিটেলিং।">Motion graphics, logo animation and short-form visual storytelling.</p><b>↗</b></div>
+      <div class="service-row"><span class="number">01</span><h3 data-en="Brand Identity" data-bn="ব্র্যান্ড পরিচিতি">Brand Identity</h3><p data-en="Logo design, brand colors, typography and a consistent visual identity for your business." data-bn="আপনার ব্যবসার জন্য লোগো, ব্র্যান্ডের রং, টাইপোগ্রাফি ও সামঞ্জস্যপূর্ণ ভিজ্যুয়াল পরিচিতি।">Logo design, brand colors, typography and a consistent visual identity for your business.</p><b>↗</b></div>
+      <div class="service-row"><span class="number">02</span><h3 data-en="Graphic Design" data-bn="গ্রাফিক ডিজাইন">Graphic Design</h3><p data-en="Social media posts, advertising creatives, banners, brochures and campaign visuals." data-bn="সোশ্যাল মিডিয়া পোস্ট, বিজ্ঞাপনের ডিজাইন, ব্যানার, ব্রোশিওর ও ক্যাম্পেইন ভিজ্যুয়াল।">Social media posts, advertising creatives, banners, brochures and campaign visuals.</p><b>↗</b></div>
+      <div class="service-row"><span class="number">03</span><h3 data-en="UI / UX Design" data-bn="UI / UX ডিজাইন">UI / UX Design</h3><p data-en="Clean website and app interfaces designed around real user needs." data-bn="ব্যবহারকারীর প্রয়োজন অনুযায়ী সুন্দর, পরিষ্কার ও সহজ ওয়েবসাইট এবং অ্যাপ ইন্টারফেস।">Clean website and app interfaces designed around real user needs.</p><b>↗</b></div>
+      <div class="service-row"><span class="number">04</span><h3 data-en="Motion & Animation" data-bn="মোশন ও অ্যানিমেশন">Motion & Animation</h3><p data-en="Logo animation, motion graphics and short visual stories that attract attention." data-bn="লোগো অ্যানিমেশন, মোশন গ্রাফিক্স এবং নজরকাড়া ছোট ভিজ্যুয়াল স্টোরি।">Logo animation, motion graphics and short visual stories that attract attention.</p><b>↗</b></div>
     </div>
   </div>
 </section>
@@ -303,19 +344,22 @@ th{color:var(--lime);font-weight:600}
 <section class="statement" id="about">
   <div class="container">
     <div class="eyebrow">03 / OUR PHILOSOPHY</div>
-    <h2 data-en="Good design gets attention. Great design gets remembered." data-bn="ভালো ডিজাইন নজর কাড়ে। অসাধারণ ডিজাইন মনে থেকে যায়।">Good design gets attention. Great design gets remembered.</h2>
+    <h2 data-en="Good design gets attention. Great design builds trust." data-bn="ভালো ডিজাইন নজর কাড়ে। অসাধারণ ডিজাইন তৈরি করে বিশ্বাস।">Good design gets attention. Great design builds trust.</h2>
     <p style="margin-top:25px;font-weight:700">iDraw® — Think. Create. Inspire.</p>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="process">
   <div class="container">
-    <div class="section-head"><div><div class="eyebrow">04 / PROCESS</div><h2 data-en="From idea to impact." data-bn="ভাবনা থেকে বাস্তব ফলাফল।">From idea to impact.</h2></div></div>
+    <div class="section-head">
+      <div><div class="eyebrow">04 / OUR PROCESS</div><h2 data-en="Simple from start to finish." data-bn="শুরু থেকে শেষ—সহজ প্রক্রিয়া।">Simple from start to finish.</h2></div>
+      <p data-en="You'll know what happens next, what we need from you and when to expect the next update." data-bn="পরবর্তী ধাপ কী, আপনার কাছ থেকে কী প্রয়োজন এবং কখন আপডেট পাবেন—সবকিছু পরিষ্কার থাকবে।">You'll know what happens next, what we need from you and when to expect the next update.</p>
+    </div>
     <div class="process-grid">
-      <div class="process-card"><span>01</span><h3>Discover</h3><p>Understand your goals, audience and project requirements.</p></div>
-      <div class="process-card"><span>02</span><h3>Define</h3><p>Agree on direction, scope, timeline and creative strategy.</p></div>
-      <div class="process-card"><span>03</span><h3>Design</h3><p>Develop concepts, refine the details and collect feedback.</p></div>
-      <div class="process-card"><span>04</span><h3>Deliver</h3><p>Prepare final deliverables and project handover.</p></div>
+      <div class="process-card"><span>01</span><h3 data-en="Discover" data-bn="আলোচনা">Discover</h3><p data-en="Tell us about your business, audience and goals." data-bn="আপনার ব্যবসা, লক্ষ্য এবং গ্রাহক সম্পর্কে জানান।">Tell us about your business, audience and goals.</p></div>
+      <div class="process-card"><span>02</span><h3 data-en="Plan" data-bn="পরিকল্পনা">Plan</h3><p data-en="Agree on the design direction, scope and timeline." data-bn="ডিজাইনের ধরন, কাজের পরিধি ও সময়সীমা ঠিক করি।">Agree on the design direction, scope and timeline.</p></div>
+      <div class="process-card"><span>03</span><h3 data-en="Create" data-bn="ডিজাইন">Create</h3><p data-en="Review concepts and share feedback as the work develops." data-bn="ডিজাইন দেখুন এবং কাজ এগোনোর সঙ্গে মতামত দিন।">Review concepts and share feedback as the work develops.</p></div>
+      <div class="process-card"><span>04</span><h3 data-en="Deliver" data-bn="হস্তান্তর">Deliver</h3><p data-en="Receive the agreed final files and project handover." data-bn="চুক্তি অনুযায়ী চূড়ান্ত ফাইল ও প্রজেক্ট বুঝে নিন।">Receive the agreed final files and project handover.</p></div>
     </div>
   </div>
 </section>
@@ -324,22 +368,27 @@ th{color:var(--lime);font-weight:600}
   <div class="container contact-grid">
     <div>
       <div class="eyebrow">05 / LET'S WORK TOGETHER</div>
-      <h2 data-en="Have a project in mind?" data-bn="আপনার কি কোনো প্রজেক্ট আছে?">Have a project in mind?</h2>
-      <p data-en="Tell us what you're building. Share your requirements and we'll get back to you." data-bn="আপনার কাজের বিস্তারিত জানান। আপনার প্রয়োজন বুঝে যোগাযোগ করা হবে।">Tell us what you're building. Share your requirements and we'll get back to you.</p>
-      <p style="margin-top:20px"><a href="mailto:hello@idrawdesigns.com">hello@idrawdesigns.com ↗</a></p>
+      <h2 data-en="Let's make your idea real." data-bn="আপনার ভাবনাকে বাস্তব করি।">Let's make your idea real.</h2>
+      <p data-en="Share your project details. We'll review your requirements and discuss the next steps." data-bn="আপনার প্রজেক্টের বিস্তারিত জানান। আমরা প্রয়োজন বুঝে পরবর্তী পদক্ষেপ নিয়ে আলোচনা করব।">Share your project details. We'll review your requirements and discuss the next steps.</p>
+      <p style="margin-top:22px"><a href="mailto:hello@idrawdesigns.com">hello@idrawdesigns.com ↗</a></p>
       <p style="margin-top:12px"><a id="whatsappLink" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp ↗</a></p>
-      <p class="small" style="margin-top:20px">Update the email and WhatsApp details in the code before publishing.</p>
+      <p class="small" style="margin-top:20px" data-en="Update the email and WhatsApp number in the code before publishing." data-bn="ওয়েবসাইট প্রকাশের আগে কোডে সঠিক ইমেইল ও WhatsApp নম্বর বসান।">Update the email and WhatsApp number in the code before publishing.</p>
     </div>
+
     <form class="form-card" id="inquiryForm">
-      <h3 style="font:600 24px 'Space Grotesk';margin-bottom:20px" data-en="Project Inquiry" data-bn="প্রজেক্ট সম্পর্কে জানান">Project Inquiry</h3>
-      <label>Name *<input class="field" name="name" required maxlength="100" autocomplete="name" placeholder="Your name"></label>
-      <label>Email *<input class="field" name="email" type="email" required maxlength="150" autocomplete="email" placeholder="you@example.com"></label>
-      <label>Service<select class="field" name="service"><option>Branding</option><option>Graphic Design</option><option>UI/UX</option><option>Motion</option><option>Other</option></select></label>
-      <label>Budget / timeline<input class="field" name="budget" maxlength="100" placeholder="Budget and deadline (optional)"></label>
-      <label>Project brief *<textarea class="field" name="brief" required maxlength="3000" placeholder="Tell us about your project..."></textarea></label>
-      <button class="btn btn-primary" type="submit">Prepare Inquiry ↗</button>
+      <h3 style="font:600 24px 'Space Grotesk';margin-bottom:20px" data-en="Tell Us About Your Project" data-bn="আপনার প্রজেক্ট সম্পর্কে জানান">Tell Us About Your Project</h3>
+      <label data-en="Your Name *" data-bn="আপনার নাম *">Your Name *<input class="field" name="name" required maxlength="100" autocomplete="name" placeholder="Your name"></label>
+      <label data-en="Email Address *" data-bn="ইমেইল ঠিকানা *">Email Address *<input class="field" name="email" type="email" required maxlength="150" autocomplete="email" placeholder="you@example.com"></label>
+      <label data-en="What do you need?" data-bn="কোন সেবাটি প্রয়োজন?">What do you need?
+        <select class="field" name="service">
+          <option>Branding</option><option>Graphic Design</option><option>UI/UX</option><option>Motion</option><option>Other</option>
+        </select>
+      </label>
+      <label data-en="Budget or Deadline (optional)" data-bn="বাজেট বা সময়সীমা (ঐচ্ছিক)">Budget or Deadline (optional)<input class="field" name="budget" maxlength="100" placeholder="Budget / deadline"></label>
+      <label data-en="Project Details *" data-bn="প্রজেক্টের বিস্তারিত *">Project Details *<textarea class="field" name="brief" required maxlength="3000" placeholder="Tell us about your project..."></textarea></label>
+      <button class="btn btn-primary" type="submit" data-en="Prepare Email ↗" data-bn="ইমেইল তৈরি করুন ↗">Prepare Email ↗</button>
       <p class="form-status" id="inquiryStatus" aria-live="polite"></p>
-      <p class="small" style="margin-top:10px">Demo form: opens your email app. A backend is required to save inquiries centrally.</p>
+      <p class="small" style="margin-top:10px" data-en="This demo opens your email app. Central storage needs a backend." data-bn="এই ডেমোতে আপনার ইমেইল অ্যাপ খুলবে। সব ইনকোয়ারি সংরক্ষণ করতে ব্যাকএন্ড লাগবে।">This demo opens your email app. Central storage needs a backend.</p>
     </form>
   </div>
 </section>
@@ -347,7 +396,7 @@ th{color:var(--lime);font-weight:600}
 
 <footer>
   <div class="container footer-inner">
-    <a class="brand" href="#home"><span class="brand-logo">iD</span><span class="brand-name">iDraw<span>Designs</span></span></a>
+    <a class="brand" href="#home"><span class="brand-name">iDraw<span> Designs</span></span></a>
     <p>© 2026 iDraw Designs. All rights reserved.</p>
     <div class="socials"><a href="#" aria-label="Instagram">Instagram</a><a href="#" aria-label="Behance">Behance</a><a href="#" aria-label="Facebook">Facebook</a></div>
     <button class="text-btn" id="adminBtn">Studio Admin ↗</button>
@@ -356,7 +405,7 @@ th{color:var(--lime);font-weight:600}
 
 <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
   <div class="modal-box">
-    <div class="modal-head"><h2 id="projectModalTitle">Project</h2><button class="close-btn" data-close="projectModal">✕</button></div>
+    <div class="modal-head"><h2 id="projectModalTitle">Project Preview</h2><button class="close-btn" data-close="projectModal">✕</button></div>
     <div id="projectPreview"></div>
   </div>
 </div>
@@ -364,11 +413,11 @@ th{color:var(--lime);font-weight:600}
 <div class="modal" id="clientModal" role="dialog" aria-modal="true" aria-labelledby="clientModalTitle">
   <div class="modal-box">
     <div class="modal-head"><h2 id="clientModalTitle">Client Portal</h2><button class="close-btn" data-close="clientModal">✕</button></div>
-    <div class="notice">Client accounts are not connected yet. This is a UI prototype and does not authenticate users or display private project data.</div>
+    <div class="notice">This is a portal preview, not a live client account system. Secure sign-in and private project updates require a backend.</div>
     <form id="clientForm">
-      <label>Email<input class="field" type="email" name="email" required placeholder="Your registered email"></label>
-      <label>Project reference<input class="field" name="reference" maxlength="80" placeholder="Project ID (optional)"></label>
-      <button class="btn btn-primary" type="submit">Request Client Access</button>
+      <label>Email Address<input class="field" type="email" name="email" required placeholder="Your registered email"></label>
+      <label>Project Reference (optional)<input class="field" name="reference" maxlength="80" placeholder="Project ID"></label>
+      <button class="btn btn-primary" type="submit">Request Access</button>
       <p class="form-status" id="clientStatus" aria-live="polite"></p>
     </form>
   </div>
@@ -376,35 +425,33 @@ th{color:var(--lime);font-weight:600}
 
 <div class="modal" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
   <div class="modal-box">
-    <div class="modal-head"><h2 id="adminTitle">iDRAW / STUDIO ADMIN</h2><button class="close-btn" data-close="adminModal">✕</button></div>
+    <div class="modal-head"><h2 id="adminTitle">Studio Admin</h2><button class="close-btn" data-close="adminModal">✕</button></div>
     <div id="adminLogin">
-      <div class="notice"><strong>Studio demo dashboard.</strong> Changes are saved only in this browser and are not published to other visitors. Do not store private client information here.</div>
+      <div class="notice"><strong>Demo only:</strong> this browser-based login is not secure authentication. Do not use real passwords or private client data.</div>
       <form id="adminLoginForm">
-        <label>Demo username<input class="field" name="username" required autocomplete="username" placeholder="studio"></label>
-        <label>Demo password<input class="field" name="password" type="password" required autocomplete="current-password" placeholder="Enter demo password"></label>
-        <button class="btn btn-primary" type="submit">Enter Studio ↗</button>
+        <label>Demo Username<input class="field" name="username" required autocomplete="off" placeholder="studio"></label>
+        <label>Demo Password<input class="field" name="password" type="password" required autocomplete="off" placeholder="Demo password"></label>
+        <button class="btn btn-primary" type="submit">Open Dashboard</button>
         <p class="form-status" id="adminLoginStatus" aria-live="polite"></p>
-        <p class="small" style="margin-top:10px">Demo access only. This is not secure authentication.</p>
       </form>
+      <p class="small">Demo username: <b>studio</b> · Demo password: <b>demo123</b></p>
     </div>
-
     <div id="adminDashboard" hidden>
-      <div class="notice">Demo dashboard: projects and inquiries are stored in this browser only. They are not shared with other devices.</div>
+      <div class="notice">Projects and inquiries are saved only in this browser. This dashboard is not connected to other devices.</div>
       <div class="stats">
         <div class="stat"><strong id="statProjects">0</strong><span>Projects</span></div>
-        <div class="stat"><strong id="statInquiries">0</strong><span>Inquiries on this device</span></div>
-        <div class="stat"><strong>DEMO</strong><span>Storage mode</span></div>
+        <div class="stat"><strong id="statInquiries">0</strong><span>Inquiries</span></div>
+        <div class="stat"><strong>Demo</strong><span>Storage mode</span></div>
       </div>
       <div class="admin-layout">
         <div class="admin-sidebar">
           <button class="admin-tab active" data-admin-tab="projects">Projects</button>
           <button class="admin-tab" data-admin-tab="inquiries">Inquiries</button>
-          <button class="admin-tab" data-admin-tab="settings">Setup guide</button>
+          <button class="admin-tab" data-admin-tab="settings">Setup Guide</button>
         </div>
         <div class="admin-content" id="adminContent"></div>
       </div>
-      <div class="divider"></div>
-      <button class="btn btn-small" id="adminLogout">Close Demo Session</button>
+      <div style="margin-top:20px"><button class="btn btn-small" id="adminLogout">Close Session</button></div>
     </div>
   </div>
 </div>
@@ -412,11 +459,12 @@ th{color:var(--lime);font-weight:600}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
+(function(){
 "use strict";
-(()=>{
 const $=(s,r=document)=>r.querySelector(s);
 const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const STORAGE={projects:"idraw_demo_projects_v2",inquiries:"idraw_demo_inquiries_v2",language:"idraw_demo_language_v2"};
+
 const defaults=[
 {id:"p1",title:"iDraw Brand Identity",category:"Branding",description:"A bold visual identity concept for a creative studio.",art:"green",symbol:"iD",image:""},
 {id:"p2",title:"Digital Experience",category:"UI/UX",description:"A modern interface concept focused on clarity and usability.",art:"blue",symbol:"UX",image:""},
@@ -424,187 +472,203 @@ const defaults=[
 {id:"p4",title:"Motion Experiments",category:"Motion",description:"A visual direction concept for motion and animation.",art:"purple",symbol:"MOVE",image:""}
 ];
 function readStore(key,fallback){
-try{const v=localStorage.getItem(key);return v?JSON.parse(v):fallback}catch(e){return fallback}
+  try{const v=localStorage.getItem(key);return v?JSON.parse(v):fallback}catch(e){return fallback}
 }
 function writeStore(key,value){
-try{localStorage.setItem(key,JSON.stringify(value));return true}
-catch(e){showToast("Browser storage unavailable or full.");return false}
+  try{localStorage.setItem(key,JSON.stringify(value));return true}
+  catch(e){showToast("Browser storage is unavailable or full.");return false}
 }
 let projects=readStore(STORAGE.projects,defaults);
 let inquiries=readStore(STORAGE.inquiries,[]);
-let currentCategory="All";
-let currentLanguage=readStore(STORAGE.language,"en");
-let toastTimer;
+let categoryNow="All",languageNow=readStore(STORAGE.language,"en"),toastTimer;
+
 function showToast(message){
-const t=$("#toast");t.textContent=message;t.classList.add("show");
-clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove("show"),2800);
+  const t=$("#toast");t.textContent=message;t.classList.add("show");
+  clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove("show"),3000);
 }
-function openModal(id){const m=$("#"+id);if(m)m.classList.add("open")}
-function closeModal(id){const m=$("#"+id);if(m)m.classList.remove("open")}
+function openModal(id){const el=$("#"+id);if(el)el.classList.add("open")}
+function closeModal(id){const el=$("#"+id);if(el)el.classList.remove("open")}
 $$("[data-close]").forEach(b=>b.addEventListener("click",()=>closeModal(b.dataset.close)));
 $$(".modal").forEach(m=>m.addEventListener("click",e=>{if(e.target===m)m.classList.remove("open")}));
 document.addEventListener("keydown",e=>{if(e.key==="Escape")$$(".modal.open").forEach(m=>m.classList.remove("open"))});
+
 const artColors={green:"art-green",blue:"art-blue",orange:"art-orange",purple:"art-purple"};
-function make(tag,text,className){
-const el=document.createElement(tag);
-if(text!==undefined)el.textContent=text;
-if(className)el.className=className;
-return el;
-}
 function renderArt(container,p){
-const art=make("div",undefined,"art-label "+(artColors[p.art]||"art-green"));
-art.append(make("span",p.symbol||"iD"));container.append(art);
+  const art=document.createElement("div");art.className="art-label "+(artColors[p.art]||"art-green");
+  const span=document.createElement("span");span.textContent=p.symbol||"iD";art.append(span);container.append(art);
 }
 function renderProjects(){
-const grid=$("#projectGrid");grid.replaceChildren();
-const visible=projects.filter(p=>currentCategory==="All"||p.category===currentCategory);
-if(!visible.length){grid.append(make("div","No projects in this category yet.","empty"));return}
-visible.forEach(p=>{
-const card=make("article",undefined,"project");card.tabIndex=0;card.setAttribute("role","button");card.setAttribute("aria-label","Preview "+p.title);
-const image=make("div",undefined,"project-image");
-if(p.image){
-const img=make("img");img.src=p.image;img.alt=p.title;img.loading="lazy";
-img.onerror=()=>{img.remove();if(!image.querySelector(".art-label"))renderArt(image,p)};
-image.append(img);
-}else renderArt(image,p);
-const meta=make("div",undefined,"project-meta"),info=make("div");
-info.append(make("h3",p.title),make("p",p.category+" · "+p.description));
-const preview=make("button","View ↗","text-btn");preview.type="button";preview.addEventListener("click",e=>{e.stopPropagation();showProject(p.id)});
-meta.append(info,preview);card.append(image,meta);
-card.addEventListener("click",()=>showProject(p.id));
-card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();showProject(p.id)}});
-grid.append(card);
-});
+  const grid=$("#projectGrid");grid.replaceChildren();
+  const list=projects.filter(p=>categoryNow==="All"||p.category===categoryNow);
+  if(!list.length){const empty=document.createElement("div");empty.className="empty";empty.textContent="No projects in this category yet.";grid.append(empty);return}
+  list.forEach(p=>{
+    const card=document.createElement("article");card.className="project";card.tabIndex=0;card.setAttribute("role","button");card.setAttribute("aria-label","Preview "+p.title);
+    const image=document.createElement("div");image.className="project-image";
+    if(p.image){
+      const img=document.createElement("img");img.src=p.image;img.alt=p.title;img.loading="lazy";
+      img.onerror=()=>{img.remove();renderArt(image,p)};image.append(img);
+    }else renderArt(image,p);
+    const meta=document.createElement("div");meta.className="project-meta";
+    const info=document.createElement("div");
+    const title=document.createElement("h3");title.textContent=p.title;
+    const desc=document.createElement("p");desc.textContent=p.category+" · "+p.description;
+    info.append(title,desc);
+    const view=document.createElement("button");view.type="button";view.className="text-btn";view.textContent="View ↗";
+    view.addEventListener("click",e=>{e.stopPropagation();showProject(p.id)});
+    meta.append(info,view);card.append(image,meta);
+    card.addEventListener("click",()=>showProject(p.id));
+    card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();showProject(p.id)}});
+    grid.append(card);
+  });
 }
 function showProject(id){
-const p=projects.find(x=>x.id===id);if(!p)return;
-$("#projectModalTitle").textContent=p.title;
-const preview=$("#projectPreview");preview.replaceChildren();
-if(p.image){
-const img=make("img");img.src=p.image;img.alt=p.title;img.style.cssText="width:100%;max-height:380px;object-fit:contain;border-radius:10px;background:#14251a";preview.append(img);
-}else{
-renderArt(preview,p);preview.firstChild.style.cssText="min-height:220px;border-radius:10px;margin-bottom:20px";
-}
-const category=make("p",p.category,"eyebrow");category.style.marginTop="20px";
-const desc=make("p",p.description,"muted");desc.style.cssText="margin-top:12px;line-height:1.8";
-const link=make("a","Discuss a similar project ↗","btn btn-primary");link.style.marginTop="20px";link.href="#contact";link.addEventListener("click",()=>closeModal("projectModal"));
-preview.append(category,desc,link);openModal("projectModal");
+  const p=projects.find(x=>x.id===id);if(!p)return;
+  $("#projectModalTitle").textContent=p.title;
+  const preview=$("#projectPreview");preview.replaceChildren();
+  if(p.image){
+    const img=document.createElement("img");img.src=p.image;img.alt=p.title;
+    img.style.cssText="width:100%;max-height:380px;object-fit:contain;border-radius:10px;background:#14251a";
+    preview.append(img);
+  }else{
+    renderArt(preview,p);
+    preview.firstChild.style.cssText="min-height:220px;display:grid;place-items:center;border-radius:10px;margin-bottom:20px";
+  }
+  const cat=document.createElement("p");cat.className="eyebrow";cat.style.marginTop="20px";cat.textContent=p.category;
+  const desc=document.createElement("p");desc.className="muted";desc.style.cssText="margin-top:12px;line-height:1.8";desc.textContent=p.description;
+  const link=document.createElement("a");link.className="btn btn-primary";link.style.marginTop="20px";link.href="#contact";link.textContent="Discuss a similar project ↗";link.addEventListener("click",()=>closeModal("projectModal"));
+  preview.append(cat,desc,link);openModal("projectModal");
 }
 $$(".filter").forEach(b=>b.addEventListener("click",()=>{
-currentCategory=b.dataset.category;
-$$(".filter").forEach(x=>x.classList.toggle("active",x===b));
-renderProjects();
+  categoryNow=b.dataset.category;$$(".filter").forEach(x=>x.classList.toggle("active",x===b));renderProjects();
 }));
-function applyLanguage(language){
-currentLanguage=language;document.documentElement.lang=language==="bn"?"bn":"en";
-$$("[data-en][data-bn]").forEach(el=>{el.textContent=el.dataset[language]});
-$("#langBtn").textContent=language==="en"?"বাংলা":"English";
-writeStore(STORAGE.language,language);
+
+function applyLanguage(lang){
+  languageNow=lang;document.documentElement.lang=lang==="bn"?"bn":"en";
+  document.body.classList.toggle("bn",lang==="bn");
+  $$("[data-en][data-bn]").forEach(el=>{
+    const value=el.dataset[lang];
+    if(el.tagName==="H1"&&lang==="bn"){
+      el.textContent=value;
+    }else el.textContent=value;
+  });
+  $("#langBtn").textContent=lang==="en"?"বাংলা":"English";
+  writeStore(STORAGE.language,lang);
 }
-$("#langBtn").addEventListener("click",()=>applyLanguage(currentLanguage==="en"?"bn":"en"));
-applyLanguage(currentLanguage==="bn"?"bn":"en");
+$("#langBtn").addEventListener("click",()=>applyLanguage(languageNow==="en"?"bn":"en"));
+applyLanguage(languageNow==="bn"?"bn":"en");
+
 $("#menuBtn").addEventListener("click",()=>{
-const nav=$("#navLinks"),isOpen=nav.classList.toggle("open");
-$("#menuBtn").setAttribute("aria-expanded",String(isOpen));
+  const nav=$("#navLinks"),isOpen=nav.classList.toggle("open");
+  $("#menuBtn").setAttribute("aria-expanded",String(isOpen));
 });
-$$("#navLinks a").forEach(a=>a.addEventListener("click",()=>{$("#navLinks").classList.remove("open");$("#menuBtn").setAttribute("aria-expanded","false")}));
+$$('#navLinks a').forEach(a=>a.addEventListener("click",()=>{$("#navLinks").classList.remove("open");$("#menuBtn").setAttribute("aria-expanded","false")}));
+
 $("#inquiryForm").addEventListener("submit",e=>{
-e.preventDefault();
-const form=e.currentTarget,data=Object.fromEntries(new FormData(form).entries());
-data.id="i"+Date.now();data.createdAt=new Date().toISOString();
-inquiries.push(data);
-if(!writeStore(STORAGE.inquiries,inquiries)){inquiries.pop();return}
-updateStats();
-const subject=encodeURIComponent("Project Inquiry — "+data.service);
-const body=encodeURIComponent("Name: "+data.name+"\nEmail: "+data.email+"\nService: "+data.service+"\nBudget / timeline: "+data.budget+"\n\nProject brief:\n"+data.brief);
-$("#inquiryStatus").textContent="Opening your email app. This inquiry is saved only in this browser demo.";
-window.location.href="mailto:hello@idrawdesigns.com?subject="+subject+"&body="+body;
-form.reset();
+  e.preventDefault();
+  const form=e.currentTarget,data=Object.fromEntries(new FormData(form).entries());
+  data.id="i"+Date.now();data.createdAt=new Date().toISOString();
+  inquiries.push(data);writeStore(STORAGE.inquiries,inquiries);updateStats();
+  const subject=encodeURIComponent("Project Inquiry — "+data.service);
+  const body=encodeURIComponent("Name: "+data.name+"\nEmail: "+data.email+"\nService: "+data.service+"\nBudget / timeline: "+data.budget+"\n\nProject brief:\n"+data.brief);
+  $("#inquiryStatus").textContent="Your email app will open. This inquiry is stored only in this browser demo.";
+  window.location.href="mailto:hello@idrawdesigns.com?subject="+subject+"&body="+body;
+  form.reset();
 });
-$("#clientBtn").addEventListener("click",()=>{ $("#clientStatus").textContent="";openModal("clientModal")});
-$("#clientForm").addEventListener("submit",e=>{e.preventDefault();$("#clientStatus").textContent="Prototype only: client access is not connected. Please contact the studio directly."});
+$("#clientBtn").addEventListener("click",()=>{$("#clientStatus").textContent="";openModal("clientModal")});
+$("#clientForm").addEventListener("submit",e=>{
+  e.preventDefault();$("#clientStatus").textContent="This portal is a prototype. Please contact the studio for project updates.";
+});
 $("#adminBtn").addEventListener("click",()=>{
-$("#adminLogin").hidden=false;$("#adminDashboard").hidden=true;$("#adminLoginStatus").textContent="";$("#adminLoginForm").reset();openModal("adminModal");
+  $("#adminLogin").hidden=false;$("#adminDashboard").hidden=true;$("#adminLoginStatus").textContent="";
+  $("#adminLoginForm").reset();openModal("adminModal");
 });
 $("#adminLoginForm").addEventListener("submit",e=>{
-e.preventDefault();const d=new FormData(e.currentTarget);
-const username=String(d.get("username")||"").trim(),password=String(d.get("password")||"");
-if(username==="studio"&&password==="demo123"){
-$("#adminLogin").hidden=true;$("#adminDashboard").hidden=false;renderAdminTab("projects");updateStats();
-}else{$("#adminLoginStatus").textContent="Incorrect demo username or password."}
+  e.preventDefault();const d=new FormData(e.currentTarget);
+  if(String(d.get("username")).trim()==="studio"&&String(d.get("password"))==="demo123"){
+    $("#adminLogin").hidden=true;$("#adminDashboard").hidden=false;renderAdminTab("projects");updateStats();
+  }else $("#adminLoginStatus").textContent="Username or password is incorrect.";
 });
 $("#adminLogout").addEventListener("click",()=>{closeModal("adminModal");$("#adminDashboard").hidden=true;$("#adminLogin").hidden=false});
 $$("[data-admin-tab]").forEach(b=>b.addEventListener("click",()=>{
-$$(".admin-tab").forEach(x=>x.classList.toggle("active",x===b));renderAdminTab(b.dataset.adminTab);
+  $$(".admin-tab").forEach(x=>x.classList.toggle("active",x===b));renderAdminTab(b.dataset.adminTab);
 }));
-function updateStats(){
-$("#statProjects").textContent=projects.length;
-$("#statInquiries").textContent=inquiries.length;
+function updateStats(){$("#statProjects").textContent=projects.length;$("#statInquiries").textContent=inquiries.length}
+function make(tag,text,className){
+  const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(className)el.className=className;return el;
 }
 function renderAdminTab(tab){
-const content=$("#adminContent");content.replaceChildren();
-if(tab==="projects"){
-content.append(make("h3","Manage Portfolio"),make("p","Changes are saved in this browser only.","small"));
-const form=document.createElement("form");form.id="addProjectForm";form.style.marginTop="16px";
-const titleLabel=make("label","Project title"),title=make("input");title.className="field";title.name="title";title.required=true;title.maxLength=100;title.placeholder="Enter project title";titleLabel.append(title);
-const catLabel=make("label","Category"),category=make("select");category.className="field";category.name="category";
-["Branding","Graphic Design","UI/UX","Motion"].forEach(v=>{const o=make("option",v);o.value=v;category.append(o)});catLabel.append(category);
-const descLabel=make("label","Description"),desc=make("textarea");desc.className="field";desc.name="description";desc.required=true;desc.maxLength=500;desc.placeholder="Describe this project";descLabel.append(desc);
-const imageLabel=make("label","Image URL (optional)"),image=make("input");image.className="field";image.name="image";image.type="url";image.placeholder="https://example.com/design.jpg";imageLabel.append(image);
-form.append(titleLabel,catLabel,descLabel,imageLabel,make("p","Use a public image URL. Image upload is not supported in this demo.","small"));
-const submit=make("button","Add Project +","btn btn-primary");submit.type="submit";form.append(submit);content.append(form);
-const heading=make("h3","Existing Projects");heading.style.marginTop="24px";content.append(heading);
-const list=make("div");list.style.marginTop="8px";
-projects.forEach(p=>{
-const row=make("div");row.style.cssText="padding:13px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center";
-const info=make("div");info.style.minWidth="0";info.append(make("strong",p.title),make("p",p.category,"small"));
-const remove=make("button","Delete","btn btn-small");remove.type="button";
-remove.addEventListener("click",()=>{
-if(!confirm("Delete "+p.title+" from this browser demo?"))return;
-const old=projects;projects=projects.filter(x=>x.id!==p.id);
-if(writeStore(STORAGE.projects,projects)){renderProjects();renderAdminTab("projects");updateStats();showToast("Project deleted")}else projects=old;
-});
-row.append(info,remove);list.append(row);
-});
-content.append(list);
-form.addEventListener("submit",e=>{
-e.preventDefault();const d=new FormData(form);
-const p={id:"p"+Date.now(),title:String(d.get("title")||"").trim(),category:String(d.get("category")),description:String(d.get("description")||"").trim(),image:String(d.get("image")||"").trim(),art:"green",symbol:"iD"};
-if(!p.title||!p.description)return;
-const old=projects;projects=[p,...projects];
-if(writeStore(STORAGE.projects,projects)){renderProjects();updateStats();renderAdminTab("projects");showToast("Project added successfully")}
-else projects=old;
-});
-}
-if(tab==="inquiries"){
-content.append(make("h3","Inquiries"),make("p","Inquiries saved in this browser only.","small"));
-if(!inquiries.length){content.append(make("div","No local inquiries yet.","empty"));return}
-const wrap=make("div",undefined,"table-wrap"),table=document.createElement("table"),thead=document.createElement("thead"),hr=document.createElement("tr");
-["Name / Email","Service","Brief"].forEach(v=>hr.append(make("th",v)));
-thead.append(hr);const tbody=document.createElement("tbody");
-inquiries.forEach(i=>{
-const tr=document.createElement("tr"),name=make("td");
-name.append(make("strong",i.name),make("p",i.email,"small"));
-tr.append(name,make("td",i.service),make("td",i.brief));tbody.append(tr);
-});
-table.append(thead,tbody);wrap.append(table);content.append(wrap);
-}
-if(tab==="settings"){
-content.append(make("h3","Production Setup"));
-const steps=[
-"Create a Firebase or Supabase project.",
-"Enable real authentication and server-side admin permissions.",
-"Create projects, inquiries, clients and project update records.",
-"Upload images to storage and save their public URLs.",
-"Configure database security so clients only see their own projects.",
-"Connect the forms and dashboard to the backend.",
-"Configure email notifications and password recovery.",
-"Test access permissions before storing real client information."
-];
-const list=document.createElement("ol");list.style.cssText="padding-left:20px;line-height:2;color:var(--muted);font-size:12px;margin-top:15px";
-steps.forEach(s=>list.append(make("li",s)));
-content.append(list,make("p","This static prototype does not provide real authentication, server uploads or cross-device syncing.","notice"));
-}
+  const content=$("#adminContent");content.replaceChildren();
+  if(tab==="projects"){
+    content.append(make("h3","Manage Portfolio"));
+    content.append(make("p","Changes are stored in this browser only.","small"));
+    const form=document.createElement("form");form.style.marginTop="18px";
+    function inputField(title,name,type="text",required=true){
+      const label=make("label",title),input=document.createElement("input");
+      input.className="field";input.name=name;input.type=type;input.required=required;
+      if(name==="title")input.maxLength=100;
+      if(name==="image")input.placeholder="https://example.com/design.jpg";
+      label.append(input);return label;
+    }
+    const title=inputField("Project Title","title");
+    const categoryLabel=make("label","Category"),category=document.createElement("select");
+    category.className="field";category.name="category";
+    ["Branding","Graphic Design","UI/UX","Motion"].forEach(v=>{const o=make("option",v);o.value=v;category.append(o)});
+    categoryLabel.append(category);
+    const descLabel=make("label","Description"),desc=document.createElement("textarea");
+    desc.className="field";desc.name="description";desc.required=true;desc.maxLength=500;descLabel.append(desc);
+    const image=inputField("Public Image URL (optional)","image","url",false);
+    const submit=make("button","Add Project","btn btn-primary");submit.type="submit";
+    form.append(title,categoryLabel,descLabel,image,make("p","Use a public image URL. This demo does not upload image files.","small"),submit);
+    content.append(form);
+    const heading=make("h3","Existing Projects");heading.style.marginTop="25px";content.append(heading);
+    const list=make("div");list.style.marginTop="10px";
+    projects.forEach(p=>{
+      const row=make("div");row.style.cssText="padding:13px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center";
+      const info=make("div");info.append(make("strong",p.title),make("p",p.category,"small"));
+      const del=make("button","Delete","btn btn-small");del.type="button";
+      del.addEventListener("click",()=>{
+        if(!confirm("Delete this project from this browser demo?"))return;
+        projects=projects.filter(x=>x.id!==p.id);
+        if(writeStore(STORAGE.projects,projects)){renderProjects();renderAdminTab("projects");updateStats()}
+      });
+      row.append(info,del);list.append(row);
+    });
+    content.append(list);
+    form.addEventListener("submit",e=>{
+      e.preventDefault();const d=new FormData(form),imageURL=String(d.get("image")||"").trim();
+      projects.unshift({id:"p"+Date.now(),title:String(d.get("title")).trim(),category:String(d.get("category")),description:String(d.get("description")).trim(),image:imageURL,art:"green",symbol:"iD"});
+      if(writeStore(STORAGE.projects,projects)){renderProjects();updateStats();renderAdminTab("projects");showToast("Project added to this browser demo.")}
+    });
+  }
+  if(tab==="inquiries"){
+    content.append(make("h3","Project Inquiries"),make("p","Only inquiries saved in this browser appear here.","small"));
+    if(!inquiries.length){content.append(make("div","No inquiries yet.","empty"));return}
+    const wrap=make("div",undefined,"table-wrap"),table=document.createElement("table"),thead=document.createElement("thead"),tr=document.createElement("tr");
+    ["Name / Email","Service","Project Brief"].forEach(x=>tr.append(make("th",x)));
+    thead.append(tr);const tbody=document.createElement("tbody");
+    inquiries.forEach(i=>{
+      const row=document.createElement("tr"),name=make("td");
+      name.append(make("strong",i.name),make("p",i.email,"small"));
+      row.append(name,make("td",i.service),make("td",i.brief));tbody.append(row);
+    });
+    table.append(thead,tbody);wrap.append(table);content.append(wrap);
+  }
+  if(tab==="settings"){
+    content.append(make("h3","Production Setup"));
+    const steps=[
+      "Create a Firebase or Supabase project.",
+      "Add real authentication with server-side admin permissions.",
+      "Create project, inquiry and client-update database tables.",
+      "Upload images to storage instead of relying on temporary links.",
+      "Apply security rules so clients only see their own projects.",
+      "Connect forms and dashboard to the backend.",
+      "Configure email notifications and password recovery.",
+      "Test security before storing real client information."
+    ];
+    const list=document.createElement("ol");list.style.cssText="padding-left:20px;line-height:2;color:var(--muted);font-size:12px;margin-top:15px";
+    steps.forEach((s,i)=>list.append(make("li",(i+1)+". "+s)));
+    content.append(list,make("p","This static website is a prototype, not a production client management system.","notice"));
+  }
 }
 renderProjects();updateStats();
 })();
